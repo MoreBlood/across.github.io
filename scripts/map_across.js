@@ -39,7 +39,7 @@ function initMap() { // реализация API google maps
     //google.maps.event.addDomListener(window, 'load', initMap);
 
 }
-var line = [];
+var line = new Array;
 //написать прототип для удаления
 function draw_map() {
     var doge_pos = document.getElementById("sidebar").clientHeight;
@@ -60,26 +60,22 @@ function draw_map() {
     }, 750, function() {
         // Animation complete.
     });
-
-
+	
     for (var i =0; i < 100; i++ ) {
         $("#pop_id_clone").remove();
     };
-    for (i=0; i<line.length; i++)
+	
+    if (line.length != 0)  {for (i=0; i<line.length; i++)
     {
-
-        line[i].setMap(null);
-        var flightPath = new google.maps.Polyline({
-            path: path = new google.maps.LatLng(-52.11549249999999,23.75328360000003)
-        });
-        line[i] = flightPath;
-        //line[i]=null; //or line[i].setVisible(false);
-
+			line[i].setMap(null);
     }
-    for (var i = 0; i <stop.length; i++ )
+	}
+	line = new Array;
+	for (var i = 0; i <stop.length; i++ )
     {
         if (stop[i].location.lat == '0.0000000000000000') return
     }
+    
     map.setCenter(new google.maps.LatLng(((stop[0].location.lat)+(stop[stop.length-1].location.lat))/2,((stop[0].location.lng)+(stop[stop.length-1].location.lng))/2));
     //initMap();
     var path = new Array();
