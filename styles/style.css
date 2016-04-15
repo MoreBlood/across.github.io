@@ -99,6 +99,7 @@ padding-left: 22px;
 	/* height: 660px; */
 	/* -webkit-font-smoothing: antialiased; */
 	background: rgba(141, 198, 63, 0.14);
+	overflow: hidden;
 }
 .input {
 	font-family: "VDS_Thin";
@@ -293,7 +294,8 @@ section#sidebar_time {
     font-family: "VDS New";
     text-transform: uppercase;
     background: white;
-    overflow: auto;
+    overflow: overlay;
+    -webkit-user-select: none;
 }
 
 section#map_handler {
@@ -404,6 +406,7 @@ div#dot2 {
 
 div#last_stop {
     color: #e74c3c;
+    padding-bottom: 25px;
 }
 
 div#head_trolleybus {
@@ -462,6 +465,8 @@ div#stop_from {
 
 div#dot_start {
     background-color: #1abc9c;
+    margin-top: -1px;
+    margin-bottom: 2px;
 }
 
 div#dot_trsp {
@@ -476,13 +481,13 @@ div#dot_trsp {
 
 div#dot_stop {
     background-color: #D42828;
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 div#dot_cross {
     background-color: #9b59b6;
-    margin-bottom: 1px;
-    margin-top: 2px;
+    margin-bottom: -1px;
+    margin-top: 3px;
 }
 div#dot_cross_out {
     background-color: #9b59b6;
@@ -525,13 +530,13 @@ div#first_icon {
 }
 
 div#doge_wow {
-    z-index: 206;
+    z-index: 21;
     /* margin-left: auto; */
     /* margin-right: auto; */
     /* left: 0; */
     /* right: 70%; */
     /* bottom: -105vh; */
-    left: 75%;
+    left: 65%;
     /* -webkit-transform: translate(-50%, -50%); */
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -539,7 +544,7 @@ div#doge_wow {
     /* transform: translate(-50%, -50%); */
     /* height: 100vh; */
     /* padding-top: 76vh; */
-    overflow: hidden;
     top: 25;
     height: 100vh;
+    width: 0px;
 }

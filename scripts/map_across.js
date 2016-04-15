@@ -40,25 +40,38 @@ function initMap() { // реализация API google maps
 
 }
 var line = new Array;
-//написать прототип для удаления
+
+var doge_pos_y = $(window).height() + 150; // СВЕЖАЯ пасхалка, но все же он классный
+
+
+$(window).resize(function() { // Меняем позицию дожика с изменением размера окна
+
+    doge_pos_y= $(window).height();
+    document.getElementById("doge_image").style.top = doge_pos_y + "px" ;    
+    return;
+    
+    
+});
+
+
+
 function draw_map() {
-    var doge_pos = document.getElementById("sidebar").clientHeight;
-    document.getElementById("doge_image").style.top = doge_pos + 150;
+	
 
     $( "#doge_image" ).animate({
-        top: doge_pos - 150,
-    }, 1000, function() {
-        // Animation complete.
-    });
-    $( "#doge_image" ).animate({
-        top: doge_pos - 150,
-    }, 500, function() {
-        // Animation complete.
-    });
-    $( "#doge_image" ).animate({
-        top: doge_pos + 150,
+        top: doge_pos_y - 150 ,
     }, 750, function() {
-        // Animation complete.
+        
+    });
+    $( "#doge_image" ).animate({
+        top: doge_pos_y - 150 ,
+    }, 500, function() {
+       
+    });
+    $( "#doge_image" ).animate({
+        top: doge_pos_y + 150 ,
+    }, 500, function() {
+        
     });
 	
     for (var i =0; i < 100; i++ ) {
