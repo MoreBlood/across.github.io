@@ -369,7 +369,7 @@ var availableTags = new Array();
 
 }*/
 
-//аудитория 401 суббота польский лектор
+
 
  $(document).ready(function(){
 

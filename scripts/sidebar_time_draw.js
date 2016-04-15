@@ -3,7 +3,6 @@ var stop_divs_id = ["stop_start","trans_stop","last_stop","stop_from","stop_to"]
 var dot_divs_id = ["dot_start","dot_trsp","dot_stop","dot_cross_out","dot_cross"];
 var colors = ["#2ecc71","#3498db","#f1c40f"];
 var transport_icons = ["bus_icon.png", "troll_icon.png", "taxi_icon.png"];
-//var kostyl = 20;
 function draw_time_sidebar(time, number, tr_type, is_end, stops_names) {
     $("#trh_clear_new").remove();
 
@@ -61,16 +60,16 @@ function draw_time_sidebar(time, number, tr_type, is_end, stops_names) {
 
 
     $(div).prepend(linedraw);
-    //div.appendChild(linedraw);
-
-    /*for (var i = 0; i < stops_names.length; i++){
-
-
-    }*/
 
     document.getElementById("sidebar_time").appendChild(div);
-        linedraw.style.height = document.getElementById("dots_handler").clientHeight  + 58 + "px";
-    //kostyl = 0;
+        linedraw.style.height = document.getElementById("dots_handler").clientHeight  + 33 + "px";
 
 
 }
+$(document).ready(function() {
+
+    // здесь будет скрытие промежуточных маршрутов
+
+
+
+});
