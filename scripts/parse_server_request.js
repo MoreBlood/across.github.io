@@ -1,5 +1,6 @@
 var stop = new Array();
 var request = "";
+var demo_json = ["LT","OL","KT", "KC"];
 
 
 function callback (json) {
@@ -41,12 +42,44 @@ function parserfromserver(){
             }
             else
             {
-                //Когда сервак отваливается, вызывается это
-                //alert('Some error');
+
             }
         }
     };
     socket.send('aCC: ' + send_requset +'\n');
     //alert(send_requset);
     
+}
+
+
+
+function DemoMode() {
+    stop = new Array();
+
+    //stop = new Array();
+    $.when( $.getJSON("data/demo/" + demo_json[getRandomInt(0,demo_json.length )] + ".json", callback)).then(function() {
+
+        draw_map();
+        var times = new Array();  var transport_names = new Array();
+        var types = new Array(); var start_transit_ends = new Array();
+        var names = new Array();
+        for (var i =0; i < stop.length; i++ ) {
+            times[i] = stop[i].time;
+            transport_names[i] = stop[i].transport_name;
+            types[i] = stop[i].type;
+            start_transit_ends[i] = stop[i].start_transit_end;
+            names[i] = stop[i].name;
+        }
+        $('#top_input').val(stop[0].name);
+        $('#bottom_input').val(stop[stop.length - 1].name);
+        draw_time_sidebar(times, transport_names, types, start_transit_ends, names);
+    });
+
+
+
+
+
+}
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }

@@ -374,6 +374,9 @@ var availableTags = new Array();
  $(document).ready(function(){
 
      GetSavedCookies();
+     $("demo").click(function () {
+         DemoMode();
+     });
 
      $( "#cost_time" ).hide(); // изначально прячем
      //alert( document.cookie );
@@ -383,6 +386,7 @@ var availableTags = new Array();
 
      $( "search" ).button(); // вызвод jquery модуля кнопки
      $( "button_swap" ).button();
+     $( "demo" ).button();
      
     $("button_swap").click(function () { // смена значений для назначений
         var temp = $('#top_input').val();

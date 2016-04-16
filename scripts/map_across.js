@@ -1,6 +1,6 @@
 var map;
 var infoWindow;
-var popup;
+var popup, pop_up_count_clear = 0;
 
 
 
@@ -66,10 +66,10 @@ function draw_map() {
         
     });
 	
-    for (var i =0; i < 100; i++ ) {
+    for (var i =0; i < pop_up_count_clear; i++ ) {
         $("#pop_id_clone").remove();
     };
-	
+    pop_up_count_clear = 0;
     if (line.length != 0)  {for (i=0; i<line.length; i++)
     {
 			line[i].setMap(null);
@@ -102,6 +102,7 @@ function draw_map() {
             }
 
             popup = new time_popup(map, stop[i].location, stop[i].time, stop[i].transport_name, stop[i].type, stop[i].start_transit_end);
+            pop_up_count_clear++;
         }
         for (i=0; i<line.length; i++)
         {
