@@ -1,6 +1,6 @@
 var stop = new Array();
 var request = "";
-var demo_json = ["LT","OL","KT", "KC"];
+var demo_json = ["LT","OL","KC"];
 
 
 function callback (json) {
@@ -11,7 +11,7 @@ function callback (json) {
 
 };
 function parserfromserver(){
-    stop = null;
+
     stop = new Array();
     var socket = new XMLHttpRequest();
     socket.open('POST', 'http://127.0.0.1', true);
@@ -51,13 +51,13 @@ function parserfromserver(){
     
 }
 
-
+var counter = 0;
 
 function DemoMode() {
+
     stop = new Array();
 
-    //stop = new Array();
-    $.when( $.getJSON("data/demo/" + demo_json[getRandomInt(0,demo_json.length )] + ".json", callback)).then(function() {
+    $.when( $.getJSON("data/demo/" + demo_json[counter % demo_json.length] + ".json", callback)).then(function() {
 
         draw_map();
         var times = new Array();  var transport_names = new Array();
@@ -73,13 +73,17 @@ function DemoMode() {
         $('#top_input').val(stop[0].name);
         $('#bottom_input').val(stop[stop.length - 1].name);
         draw_time_sidebar(times, transport_names, types, start_transit_ends, names);
+        counter++;
+
     });
 
 
 
 
 
+
 }
-function getRandomInt(min, max) {
+
+function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
