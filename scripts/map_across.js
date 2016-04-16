@@ -1,8 +1,7 @@
 var map;
 var infoWindow;
 var popup;
-var popup_pos = new google.maps.LatLng(52.0740594,23.76537499999995);
-var popup_pos2 = new google.maps.LatLng(52.11549249999999,23.75328360000003);
+
 
 
 
@@ -20,28 +19,22 @@ function initMap() { // реализация API google maps
     });
     directionsDisplay.setMap(map);
     //transitLayer.setMap(map);
-    //popup = new time_popup(map, popup_pos);
-
-
-
-
 
 
     map.addListener('click', showArrays);
     infoWindow = new google.maps.InfoWindow;
-    //calculateAndDisplayRoute(directionsService, directionsDisplay);
+
 
     $("search").click( function() {
         //calculateAndDisplayRoute(directionsService, directionsDisplay);
 
     });
-    //popup = new time_popup(map, popup_pos);
-    //google.maps.event.addDomListener(window, 'load', initMap);
+
 
 }
 var line = new Array;
 
-var doge_pos_y = $(window).height() + 150; // СВЕЖАЯ пасхалка, но все же он классный
+var doge_pos_y = $(window).height(); // СВЕЖАЯ пасхалка, но все же он классный
 
 
 $(window).resize(function() { // Меняем позицию дожика с изменением размера окна
@@ -52,7 +45,6 @@ $(window).resize(function() { // Меняем позицию дожика с и�
     
     
 });
-
 
 
 function draw_map() {

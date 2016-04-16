@@ -50,7 +50,7 @@ z-index: 10;
 	position: relative;
 }
 
-#transport_handler{
+.transport_handler{
 
 /* margin-left: 7px; */
 
@@ -69,6 +69,7 @@ padding-left: 22px;
 	margin-right: 17px;
 	display: block;
 	box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.08);
+	transition: opacity linear 0.2s;
 }
 .transport_type:hover{
     cursor: pointer;
@@ -76,7 +77,7 @@ padding-left: 22px;
 .transport_type:focus{
     cursor: pointer;
 }
-#block_handler {
+.block_handler {
 	background-color: white;
 	margin-bottom: 1px;
 	margin-right: 25px;
@@ -161,9 +162,9 @@ div#button_text {
     padding: 0;
 }
 
-div#input_clear_fix {
+div.input_clear_fix {
     margin-left: 25px;
-    /* padding-bottom: 13px; */
+    padding-bottom: 13px;
 }
 
 div#swap_image_background {
@@ -198,6 +199,7 @@ label.choice {
     /* margin-right: 1px; */
     opacity: 0.1;
     box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.08);
+    transition: opacity linear 0.2s;
 }
 label.choice {
   cursor: pointer;
@@ -305,19 +307,19 @@ section#map_handler {
     float: left;
 }
 
-div#dots_handler {
+div.dots_handler {
     float: left;
     width: 26px;
     margin-top: 50px;
     /* margin-bottom: -50px; */
 }
 
-div#stop {
+div.stop {
     float: right;
     /* padding-right: 6px; */
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 134px;
+    width: 132px;
     white-space: nowrap;
 }
 
@@ -352,7 +354,7 @@ dib#trans_stop {
     font-size: 15px;
 }
 
-div#stop_time_handler {
+div.stop_time_handler {
     text-align: right;
     width: 200px;
 }
@@ -366,7 +368,7 @@ div#trh_clear_new {
     margin: 0 auto;
 }
 
-div#time {
+div.time {
     float: left;
 }
 

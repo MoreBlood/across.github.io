@@ -62,7 +62,8 @@ function draw_time_sidebar(time, number, tr_type, is_end, stops_names) {
     $(div).prepend(linedraw);
 
     document.getElementById("sidebar_time").appendChild(div);
-        linedraw.style.height = document.getElementById("dots_handler").clientHeight  + 33 + "px";
+
+    linedraw.style.height = div.children[1].clientHeight  + 33 + "px";
 
 
 }

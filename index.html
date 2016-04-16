@@ -25,10 +25,10 @@
 <section id="sidebar_st">
 <section id="sidebar">
     <div id="logo"><!--<img src="images/logo.png" height="35px"> --></div>
-<section id="block_handler">
+<section class="block_handler" id="stops_selector">
     <!--<div id="top_clearfix" style="margin-top: 5vh"></div>-->
 <div class="header">Остановки</div>
-<div id="input_clear_fix">
+<div class="input_clear_fix">
 <input class="input" id="top_input" placeholder="Отправление">
 <input class="input" id="bottom_input" style="margin-bottom: 10px;" placeholder="Прибытие">
     <input class="input" id="time_input" style="width: 56px;height: 27px;padding-bottom: 4px;font-size: 19px;padding-right: 2px;padding-top: 4px;padding-left: 2px;text-align: center;margin-bottom: 0px;margin-top: 0px;float: left;margin-right: 4px;" placeholder="00:00">
@@ -43,10 +43,10 @@
 </section>
     <hr style="border-style: ridge; padding-top: 13px; border-width: 0px 0px 1px 0px; opacity: 0.5;">
 
-<section id="block_handler">
+<section class="block_handler" id="transport_selector">
     <div class="header">транспорт </div>
 
-<section id="transport_handler">
+<section class="transport_handler">
     <div id="checkboxes">
     <input type="checkbox" name="rGroup" value="3" id="r1"/>
 <label class="transport_type" for="r1" style="background-color: #2ecc71;" title="Автобус" ><div id="bus" style="padding-top: 9px; "><img src="images/bus.png"  height="39px"> </div> </label>
@@ -61,9 +61,9 @@
 </section>
     <hr style="border-style: ridge;  padding-top: 13px; border-width: 0px 0px 1px 0px; opacity: 0.5;">
 
-<section id="block_handler">
+<section class="block_handler" id="type_selector">
     <div class="header">приоритет при поиске </div>
-    <section id="transport_handler">
+    <section class="transport_handler">
     <div id="type_choice">
         <input type="radio" name="rGroup" value="3" id="c1" checked="checked" />
         <label class="choice" for="c1" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px" title="Приоритет скорости, в ущерб стоимости поездки"><div id="fast" style="padding-top: 8px; "><img src="images/man-running.png"  height="40px"></div></label>
@@ -75,12 +75,12 @@
     </section>
 </section>
     <hr style="border-style: ridge;  padding-top: 13px; border-width: 0px 0px 1px 0px; opacity: 0.5;">
-    <section id="block_handler">
+    <section class="block_handler" id="cost_time_selector">
 
         <div id="cost_time" >
 
         <div class="header">Цена минуты</div>
-        <div id="input_clear_fix">
+        <div class="input_clear_fix">
             <input class="input" id="cost_input" placeholder="Стоимость руб.">
             </div>
         </div>
@@ -101,16 +101,14 @@
 </section>
     </section>
 <section id="map_handler"><div id="map"></div></section>
-<section id="sidebar_time"></section>
+<section id="sidebar_time" name="sidebar_time" ></section>
 
 <section id="elements_to_copy" style="display: none;">
 
-    <div class="header_transport" id="head_bus">
-        &nbsp;
-    </div>
+
     <div  id="trh">
 
-        <div id="dots_handler">
+        <div class="dots_handler">
             <div id="line_bus"></div>
             <div class="dot" id="dot_start"></div>
             <div class="dot" id="dot_trsp"></div>
@@ -118,29 +116,26 @@
             <div class="dot" id="dot_cross"></div>
             <div class="dot" id="dot_cross_out"></div>
         </div>
-        <div id="stop_time_handler">
+        <div class="stop_time_handler">
             <div id="stop_start">
-                <div id="time">TIME</div><div id="stop">STOP_NAME - </div><br></div>
+                <div class="time">TIME</div><div class="stop">STOP_NAME - </div><br></div>
             <div id="trans_stop">
-                <div id="time">TIME</div><div id="stop">STOP_NAME - </div><br></div>
-            <div id="trans_stop">
-                <div id="time">TIME</div><div id="stop">STOP_NAME - </div><br></div>
+                <div class="time">TIME</div><div class="stop">STOP_NAME - </div><br></div>
             <div id="last_stop">
-                <div id="time">TIME</div><div id="stop">STOP_NAME - </div><br></div>
+                <div class="time">TIME</div><div class="stop">STOP_NAME - </div><br></div>
             <div id="stop_from">
-                <div id="time">TIME</div><div id="stop">STOP_NAME - </div><br></div>
+                <div class="time">TIME</div><div class="stop">STOP_NAME - </div><br></div>
             <div id="stop_to">
-                <div id="time">TIME</div><div id="stop">STOP_NAME - </div><br></div>
+                <div class="time">TIME</div><div class="stop">STOP_NAME - </div><br></div>
         </div>
     </div>
+
     <div id="draw_line"></div>
     <div class="header_transport" id="head_bus">&nbsp;</div>
+
     <div  id="trh_clear">
-
-        <div id="dots_handler">
-
-        </div>
-        <div id="stop_time_handler"></div>
+        <div class="dots_handler"></div>
+        <div class="stop_time_handler"></div>
     </div>
 
 </section>
