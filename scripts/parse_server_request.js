@@ -26,7 +26,7 @@ function parserfromserver(){
                 //$.getJSON(socket.responseText, callback);
                 callback(JSON.parse(socket.responseText));
                 socket = 0;
-                draw_map();
+                draw_map(false);
                 var times = new Array();  var transport_names = new Array();
                 var types = new Array(); var start_transit_ends = new Array();
                 var names = new Array();
@@ -59,7 +59,7 @@ function DemoMode() {
 
     $.when( $.getJSON("data/demo/" + demo_json[counter % demo_json.length] + ".json", callback)).then(function() {
 
-        draw_map();
+        draw_map(false);
         var times = new Array();  var transport_names = new Array();
         var types = new Array(); var start_transit_ends = new Array();
         var names = new Array();

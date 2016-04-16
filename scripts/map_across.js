@@ -47,25 +47,26 @@ $(window).resize(function() { // Меняем позицию дожика с и�
 });
 
 
-function draw_map() {
+function draw_map(doge) {
 	
+    if (doge) {
+        document.getElementById("doge_wow").style.display = "block";
+        $("#doge_image").animate({
+            top: doge_pos_y - 150,
+        }, 750, function () {
 
-    $( "#doge_image" ).animate({
-        top: doge_pos_y - 150 ,
-    }, 750, function() {
-        
-    });
-    $( "#doge_image" ).animate({
-        top: doge_pos_y - 150 ,
-    }, 500, function() {
-       
-    });
-    $( "#doge_image" ).animate({
-        top: doge_pos_y + 150 ,
-    }, 500, function() {
-        
-    });
-	
+        });
+        $("#doge_image").animate({
+            top: doge_pos_y - 150,
+        }, 500, function () {
+
+        });
+        $("#doge_image").animate({
+            top: doge_pos_y + 150,
+        }, 500, function () {
+
+        });
+    }
     for (var i =0; i < pop_up_count_clear; i++ ) {
         $("#pop_id_clone").remove();
     };
