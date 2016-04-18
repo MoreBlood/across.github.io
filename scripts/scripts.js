@@ -392,7 +392,8 @@ var availableTags = new Array();
          value: 0,
          step: 1,
          max: 6,
-         min: 0
+         min: 0,
+		 animate: "slow"
 
      });
      //$( "#slider_time" ).change( function() { alert("Hello"); } );
