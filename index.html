@@ -3,7 +3,7 @@
 <head>
 <meta charset=utf-8>
 <title>ACross</title>
-   <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIpGMzg2Y_rgQsA4K8O6RljzkF6kRLDy4&signed_in=true"></script>
+   <!--<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIpGMzg2Y_rgQsA4K8O6RljzkF6kRLDy4&signed_in=true"></script>-->
 <link href="styles/style.css" rel="stylesheet" type="text/css">
 <script src="external/jquery/jquery.js"></script>
 <script src="scripts/jquery-ui.js"></script>
@@ -28,23 +28,26 @@
 <section class="block_handler" id="stops_selector">
     <!--<div id="top_clearfix" style="margin-top: 5vh"></div>-->
 <div class="header">Остановки</div>
+
 <div class="input_clear_fix">
+
 <input class="input" id="top_input" placeholder="Отправление">
 <input class="input" id="bottom_input" style="margin-bottom: 10px;" placeholder="Прибытие">
+    <div id="slider_time" style="margin-bottom: 10px; width : 190px"></div>
     <input class="input" id="time_input" style="width: 56px;height: 27px;padding-bottom: 4px;font-size: 19px;padding-right: 2px;padding-top: 4px;padding-left: 2px;text-align: center;margin-bottom: 0px;margin-top: 0px;float: left;margin-right: 4px;" placeholder="00:00">
 <search style="box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.08); margin-left: 0px;">
-  <div id="search_image_background">
-    <img id="search_image" src="images/search.png">
+  <div class="search_image_background">
+    <img class="search_image" src="images/search.png">
   </div>
-  <div id="button_text">Поиск</div>
+  <div class="button_text">Поиск</div>
 </search>
 
 <button_swap style="border-width: 0px;"title="Поменять местами"><div id="swap_image_background"><img id="swap_image" src="images/swap.png"></div></button_swap>
     <demo style="box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.08); margin-left: 113px;  margin-top: 5px;" id="demo">
-        <div id="search_image_background">
-            <img id="search_image" src="images/search.png">
+        <div class="search_image_background">
+            <img class="search_image" src="images/search.png">
         </div>
-        <div id="button_text">DEMO</div>
+        <div class="button_text">DEMO</div>
     </demo>
 </div>
 </section>

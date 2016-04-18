@@ -387,6 +387,15 @@ var availableTags = new Array();
      $( "search" ).button(); // вызвод jquery модуля кнопки
      $( "button_swap" ).button();
      $( "demo" ).button();
+     $( "#slider_time" ).slider({
+         range: false,
+         value: 0,
+         step: 1,
+         max: 6,
+         min: 0
+
+     });
+     //$( "#slider_time" ).change( function() { alert("Hello"); } );
      
     $("button_swap").click(function () { // смена значений для назначений
         var temp = $('#top_input').val();
@@ -397,21 +406,59 @@ var availableTags = new Array();
 
     });
      $( "#no_transport" ).hide(); // прячем слой с подсказкой про отсутствие выбора транспорта
-     var time;
+
+     var time_shift = 0,
+         shifts = [0, 5, 10, 15, 30, 60, 120];
+
+
+
+     var time, minutes, hours, hours_plus_shift, minutes_plus_shift, time_plus_shift;
      var stopTimeUpdate = false;
      var intervalID;
+     var current_time_in_minutes_plus_shift;
 
          intervalID  = setInterval(function setCurrentTime() {
-         var minutes, hours;
          var date = new Date();
          if (date.getMinutes() < 10) minutes = "0" + date.getMinutes();
          else minutes = date.getMinutes();
          if (date.getHours() < 10) hours = "0" + date.getHours();
          else hours = date.getHours();
+             //minutes +=   $( "#slider_time" ).slider("value");
          time = hours + ':' + minutes;
          $('#time_input').val(time);
      }, 1000);
+
      $('#time_input').click( function(){ clearInterval(intervalID)});
+
+     $('#slider_time').on("slidestart", function (event, ui) {
+         clearInterval(intervalID);
+     });
+
+     $( "#slider_time" ).on("slide", function (event, ui) {
+         change_shift(ui);
+     });
+	 document.getElementById("slider_time").children[0].innerHTML = "+0мин";
+	 document.getElementById("slider_time").children[0].id = "shift_minutes";
+	 
+function change_shift(ui) {
+    //alert("We are in the game!");
+	var date = new Date();
+    var current_time_in_minutes = date.getHours() * 60 + date.getMinutes();
+    current_time_in_minutes_plus_shift = current_time_in_minutes + shifts[ui.value];
+    hours_plus_shift = current_time_in_minutes_plus_shift / 60;
+    hours_plus_shift = hours_plus_shift - (hours_plus_shift % 1);
+    minutes_plus_shift = current_time_in_minutes_plus_shift % 60;
+    
+	if (minutes_plus_shift < 10) minutes_plus_shift = "0" + minutes_plus_shift;         
+    if (hours_plus_shift < 10) hours_plus_shift = "0" + hours_plus_shift;
+    time_plus_shift = hours_plus_shift + ':' + minutes_plus_shift; 
+	
+    $('#time_input').val(time_plus_shift);
+	document.getElementById("slider_time").children[0].innerHTML = "+" + shifts[ui.value] + "мин";
+	document.getElementById("slider_time").children[0].style.textAlign = "center";
+		
+	
+}
 
 
      $("search").click( function(){

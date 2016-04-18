@@ -125,7 +125,7 @@ padding-left: 22px;
     color: white;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.49);
 }*/
-#search_image{
+.search_image{
 
 height: 21px;
 }
@@ -138,7 +138,7 @@ span.ui-button-text {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.38);
 }
 
-div#search_image_background {
+div.search_image_background {
     float: left;
     background: rgba(0, 0, 0, 0.12);
     padding-top: 6px;
@@ -147,8 +147,11 @@ div#search_image_background {
     padding-right: 7px;
 }
 
+#slider_time{
 
-div#button_text {
+}
+
+div.button_text {
     float: left;
     padding-left: 8px;
     padding-top: 4px;
@@ -549,4 +552,14 @@ div#doge_wow {
     top: 25;
     height: 100vh;
     width: 0px;
+}
+#shift_minutes{
+
+padding-left: 3px;
+padding-right: 3px;
+width: auto;
+margin-left: -1.6em;
+font-size: 0.7em;
+padding-top: 0.1em;
+padding-bottom: 0.2em;
 }
