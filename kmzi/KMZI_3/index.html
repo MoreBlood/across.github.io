@@ -17,22 +17,24 @@
 <body >
 <div class="app" >
         <h3><mark>Генерация случайных чисел</mark></h3>
-        <h4><mark>Линейный конгруэнтный метод</mark></h4>       
+        <h4><mark>Линейный конгруэнтный метод</mark></h4>
 
+			<div class="param"><span class="label label-default" >начальное</span>
+            <input type="text" class="form-control" placeholder="начальное" value="7" id="start"></div>
+            <div class="param"><span class="label label-default" >количество</span>
+            <input type="text" class="form-control" placeholder="количество" value="15" id="count" ></div>
             <div class="param"><span class="label label-default">множитель</span>
             <input type="text" class="form-control" placeholder="множитель" value="1" id="multipl"></div>
             <div class="param"><span class="label label-default">приращение</span>
             <input type="text" class="form-control" placeholder="приращение" value="4" id="priras" ></div>
-			<div class="param"><span class="label label-default" >количество</span>
-            <input type="text" class="form-control" placeholder="количество" value="15" id="count" ></div>
-            <div class="param"><span class="label label-default" >начальное</span>
-            <input type="text" class="form-control" placeholder="начальное" value="7" id="start"></div>
+			
+            
             <div id="but">
                 <button class="btn btn-success"  onclick="Generate()"><span class="glyphicon glyphicon-play"></span> Сгенерировать последовательность</button>                
             </div>
             <br>
             <span class="label label-primary">Результат</span>
-            <textarea type="text" style="width: 400px;" class="form-control" placeholder="Псоледовательность случайных чисел" id="out"></textarea>
+            <textarea type="text" style="width: 400px;" class="form-control" placeholder="Последовательность случайных чисел" id="out"></textarea>
             <br>
 
             <button class="btn btn-danger" onclick="clear_bottom()"><span class="glyphicon glyphicon-remove"></span> Очистить</button>
