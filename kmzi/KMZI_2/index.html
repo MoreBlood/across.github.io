@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+	<!--META-TAGS-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--SCRIPTS-->
+	<script src="js/main.js"></script>
+	<!--script src="js/vendor/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script //no needed//-->
+    <!--STYLE-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+    <!--TITLE-->
+    <title>Замена по таблице c 4 столбцами</title>
+</head>
+    <!--BODY-->
+<body onload="count_key()">
+    <div class="app" >
+        <h3><mark>Замена по таблице c 4 столбцами</mark></h3>
+        <h4><mark>С длинной блока 1 байт</mark></h4><br>
+                
+            <span class="label label-success">Текст для шифровки</span>
+            <textarea  style="width: 400px;" class="form-control" placeholder="Текст" id="message">HELLO MY FRIEND MY NAME IS MR ROBOT </textarea><br>
+
+            <span class="label label-default" style="float: left;">Ключ</span>
+            <input type="text" class="form-control" placeholder="Ключ" value="0312" id="key" oninput="count_key()"><div class="badge" id="counter"></div>
+
+            <div id="but">
+                <button class="btn btn-success"  onclick="TestBit(true)"><span class="glyphicon glyphicon-eye-close"></span> Зашифровать</button>
+                <button class="btn btn-primary"  onclick="TestBit(false)"><span class="glyphicon glyphicon-eye-open"></span> Расшифровать</button>
+                <button class="btn btn-warning"  onclick="swap()"><span class="
+                glyphicon glyphicon-sort"></span> Обменять</button>
+            </div>
+            <br>
+            <span class="label label-primary">Результат</span>
+            <textarea type="text" style="width: 400px;" class="form-control" placeholder="Расшифровка/шифровка" id="out"></textarea>
+            <br>
+
+            <button class="btn btn-danger" onclick="clear_bottom()"><span class="glyphicon glyphicon-remove"></span> Очистить</button>
+    </div>
+</body>
+</html>
