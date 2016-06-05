@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+<!--META-TAGS-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--SCRIPTS-->
+	<script src="js/main.js"></script>
+	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+<!--STYLE-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">    
+    <title>Метод факторизации Ферма<</title>
+</head>
+
+<body >
+<div class="app" >
+        <h3><mark>Метод факторизации Ферма</mark></h3>
+        <h4><mark>Без операции деления</mark></h4>       
+
+			<div class="param"><span class="label label-default" >нечетное число</span>
+            <input type="text" class="form-control" placeholder="начальное" value="323382303243" id="start"></div>            
+			
+            
+            <div id="but">
+                <button class="btn btn-success"  onclick="Ferma()"><span class="glyphicon glyphicon-play"></span> Разложить</button>                
+            </div>
+            <br>
+            <span class="label label-primary">Результат</span>
+            <textarea type="text" style="width: 400px;" class="form-control" placeholder="Последовательность случайных чисел" id="out"></textarea>
+            <br>
+
+            <button class="btn btn-danger" onclick="clear_bottom()"><span class="glyphicon glyphicon-remove"></span> Очистить</button>
+            <div class="input_hold"><span class="label label-default">разделитель</span>
+            <input type="text" class="form-control" placeholder="пробел" value=", " id="razd"></div>
+    </div>
+</body>
+
+<script src="js/bootstrap.min.js"></script>
+
+</html>

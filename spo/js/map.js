@@ -16,19 +16,33 @@ jQuery(document).ready(function () {
   });
 });
 
+function StartNumbers() {
+  var id0 = 0, id1 = 0, id2 = 0, id3 = 0;
+  for(var index in country){
+    id0 += parseInt(country[index].doo,10);
+    id1 += parseInt(country[index].obr,10);
+    id2 += parseInt(country[index].poo,10);
+    id3 += parseInt(country[index].odo,10);
+  }
+  $('#doo').find("span").animateNumber({ number: id0 });
+  $('#obr').find("span").animateNumber({ number: id1 });
+  $('#poo').find("span").animateNumber({ number: id2 });
+  $('#odo').find("span").animateNumber({ number: id3 });
+
+}
 
 function onRegionClickCallBack(element, code, region)
 {
-  var doo = document.getElementById("doo"),
-  obr = document.getElementById("obr"),
-  poo = document.getElementById("poo"),
-  odo = document.getElementById("odo");
+  for(var index in country){
+    if (region == country[index].name ){
+      $('#doo').find("span").animateNumber({ number: country[index].doo  },'fast');
+      $('#obr').find("span").animateNumber({ number: country[index].obr },'fast');
+      $('#poo').find("span").animateNumber({ number: country[index].poo },'fast');
+      $('#odo').find("span").animateNumber({ number: country[index].odo },'fast');
+      break;
 
-  if (code == 'ma')  var plus = 128;
-  else var plus = 0;
+    }
+  }
   
-  doo.children[0].innerHTML = 2589 + plus;
-  obr.children[0].innerHTML = 657 + plus;
-  poo.children[0].innerHTML = 236 + plus;
-  odo.children[0].innerHTML = 745 + plus;    
+
 }

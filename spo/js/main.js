@@ -1,5 +1,4 @@
 
-	
 		$(document).ready(function(){
 			var touch = $('.hidebtn');
 		    var menu = $('#nav');
@@ -29,12 +28,19 @@
 var table;
 //Фильтрация 
 $(document).ready(function() {
-        
+	StartNumbers();
+	for(var index in country){
+		CreateTable(country[index])
+	}
+
         $('#scroll_stats').filterTable(
         {
         	filterExpression: 'filterTableFindAny',
         	inputSelector: '#search_data'
         });
+		/*$.getJSON( "db/db.json", function( json ) {
+			console.log(json);
+		});*/
         /*
         table = $("#scroll_stats").tablesorter({
         	cancelSelection: false,
@@ -45,6 +51,18 @@ $(document).ready(function() {
 
 });
 
+function CreateTable(object) {
+	//console.log(object);
+	var row = $("<tr />");
+	$("#scroll_stats").append(row); 
+	row.append($("<td class='first'>" + object.name + "</td>"));
+	row.append($("<td>" + object.doo + "</td>"));
+	row.append($("<td>" + object.obr + "</td>"));
+	row.append($("<td>" + object.poo + "</td>"));
+	row.append($("<td>" + object.odo + "</td>"));
+}
+
+
 function RevertSort()
 {
 	/*
@@ -53,3 +71,4 @@ function RevertSort()
 	*/
 
 }
+
