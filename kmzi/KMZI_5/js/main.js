@@ -37,7 +37,7 @@ function Show()
   $('#save_btn').remove();  
   $('#image_layer').children().remove();
   displayContents(text_targ);
-  $('#label_open').after(' <a id="save_btn" class="btn btn-info btn-file" href="data:image/bmp;base64,' + btoa(text_targ) +'" download="filename.bmp">Сохранить</a>');
+  $('#label_open').after(' <a id="save_btn" class="btn btn-info btn-file" href="data:image/bmp;base64,' + btoa(AllBinaryMessToStr(Stenography(AllMesToBinary(text_targ)))) +'" download="encoded.bmp">Сохранить</a>');
 }
 
 function ShowUndecoded()
