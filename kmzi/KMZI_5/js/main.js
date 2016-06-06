@@ -1,5 +1,6 @@
 var text_targ;
 var freq = 3;
+var byte_shift = 56;
 
 function readSingleFile(e)
 {
@@ -16,16 +17,11 @@ function readSingleFile(e)
   reader.onloadend = function(e) 
   {
     var contents = e.target.result;    
-    //displayContents(e_text.target.result);
-    //console.log(e);
-    //show_image(contents,250,250,'kek');
-    
   };
   reader.readAsDataURL(file);
 
   reader_text.onloadend = function(e_text) 
   {
-    //displayContents(e_text.target.result);
     console.warn("Ready!")
     text_targ = e_text.target.result;
   };  
@@ -37,7 +33,8 @@ function Show()
   $('#save_btn').remove();  
   $('#image_layer').children().remove();
   displayContents(text_targ);
-  $('#label_open').after(' <a id="save_btn" class="btn btn-info btn-file" href="data:image/bmp;base64,' + btoa(AllBinaryMessToStr(Stenography(AllMesToBinary(text_targ)))) +'" download="encoded.bmp">Сохранить</a>');
+  $('#label_open').after(' <a id="save_btn" class="btn btn-info btn-file" href="data:image/bmp;base64,' 
+  + btoa(AllBinaryMessToStr(Stenography(AllMesToBinary(text_targ)))) +'" download="encoded.bmp">Сохранить</a>');
 }
 
 function ShowUndecoded()
@@ -49,18 +46,11 @@ function ShowUndecoded()
 
 }
 
-
-
 function displayContents(contents) 
 {  
-  //console.log("This content: ",contents)
   var morphedImage = AllBinaryMessToStr(Stenography(AllMesToBinary(contents)));
   FileFromArr(morphedImage);
-  //DeStenography(morphedImage);
   var element = document.getElementById('file-content');
-  //element.innerHTML = AllBinaryMessToStr(AllMesToBinary(contents));
-  //element.innerHTML = AllMesToBinary(contents);
-
 }
 
 document.getElementById('file-input')
@@ -127,21 +117,20 @@ function AllBinaryMessToStr(message)
   return str;
 }
 
-
 function Stenography(binary_image)
 {
    var message = document.getElementById("out").value + "|";
    var mess_binary = MassToString(AllMesToBinary(message));
-   //alert(mess_binary);
 
    for (var i = 0; i < mess_binary.length;  i++)
    {
-      var temp = binary_image[i+48].substring(0,7) + mess_binary[i];
-      binary_image[i+48] = temp;
-      //ProgressBar(Math.round((i / (mess_binary.length))*100));
+      var temp = binary_image[i+byte_shift].substring(0,7) + mess_binary[i];
+      binary_image[i+byte_shift] = temp;
+
    }
    return binary_image;
 }
+
 function BinaryStrToString(binary)
 {
   var str = "";
@@ -155,17 +144,14 @@ function BinaryStrToString(binary)
 
 }
 
-
 function DeStenography(binary_image)
 {
-   //var message = document.getElementById("out").value;
    binary_image = AllMesToBinary(binary_image);
    var message = "";
  
-   for (var i = 0; i < binary_image.length - 48; i++)
+   for (var i = 0; i < binary_image.length - byte_shift; i++)
    {
-      message += binary_image[i+48][7];
-      //ProgressBar(Math.round((i / (binary_image.length - 48))*100));
+      message += binary_image[i+byte_shift][7];
    }   
    var index_stop = 0;
    var message_conv = BinaryStrToString(message);
@@ -179,8 +165,7 @@ function DeStenography(binary_image)
       } 
       
    }
-   $('#image_layer').append('<p class="bg-primary">' + message_conv.substring(0,index_stop)+ '</p>')
-   //alert("Расшифрованное сообщение: " + message_conv.substring(0,index_stop));
+   $('#image_layer').append('<p class="bg-primary">' + message_conv.substring(0,index_stop)+ '</p>');
    return message;
 }
 
@@ -203,8 +188,3 @@ function FileFromArr(message)
   $('#image_layer').append(img);
 
 }
-
-/*function ProgressBar(value)
-{
-  $('#progress_bar').css("width", value + "%");  
-}*/
