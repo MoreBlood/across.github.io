@@ -240,10 +240,10 @@ Container starts here
   <article class="fluid contact">
   <div id="contact" class="header-back clear-header"><span class="bold italic category">interested? let’s work together!</span></div>
   <div class="type-of-contact"><span class="bold italic contact-header">send message:</span><br><br>
-   <form id="form" action="#">
-                        <input type="name" name="name" placeholder="your name"><br>
-                        <input type="email" name="email" placeholder="e-mail"><br>
-                        <textarea name="message" id="" placeholder="message"></textarea><br>
+   <form method="post" id="form">
+                        <input type="name" name="name" placeholder="your name" required="required"><br>
+                        <input type="email" name="email" placeholder="e-mail" required="required"><br>
+                        <textarea name="message" id="" placeholder="message" required="required"></textarea><br>
                         <button class="btn">SEND</button>
                     </form>
 

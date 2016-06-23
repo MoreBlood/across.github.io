@@ -71,7 +71,7 @@ a:visited {
 	font-style: normal;
 	font-weight: 100;
 	text-decoration: none;
-	transition: all linear 0.2s;
+	transition: all linear 0.1s;
 	text-shadow: 1px 1px 0px rgba(244, 67, 54, 0);
 }
 /* Header & HERO styles*/
@@ -472,8 +472,12 @@ li a:hover {
     color: black;
 }
 
-li a:active {
+li a:active, .active {
     text-shadow: 1px 1px 0px rgb(244, 67, 54);
+    color: black;
+}
+.active-fix {
+text-shadow: 1px 1px 0px rgb(244, 67, 54);
     color: black;
 }
 
@@ -548,4 +552,22 @@ img.cat-image {}
     width: 100%;
     z-index: 100;
     background-size: contain;
+}
+
+input:focus, textarea:focus, button:focus {
+    background: rgba(0, 0, 0, 0.28);
+    box-shadow: 0px 0px 9px white;
+    transition: all 0.3s ease-out;
+}
+
+button.btn:hover {
+    transform: scale(1.02);
+    transition: all 0.1s ease-in;
+}
+
+input:valid, textarea:valid {
+    box-shadow: inset 0px -1px 1px rgba(0, 245, 121, 0.7);
+}
+input:invalid, textarea:invalid {
+    box-shadow: inset 0px -1px 1px rgba(245, 0, 0, 0.8);
 }

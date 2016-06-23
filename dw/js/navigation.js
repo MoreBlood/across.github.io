@@ -19,9 +19,10 @@
 			//gets the distance from the top of the 
 			//section refenced in the href.
 			var target = getTargetTop($(this));
+			$(this).addClass("active-fix");
 			var mobile_scroll_fix = 0;
-			if ($( document ).width() < 768) mobile_scroll_fix = 90;
-			if ($( document ).width() < 1240 && $( document ).width() > 768) mobile_scroll_fix = 210;
+			//if ($( document ).width() < 768) mobile_scroll_fix = 90;
+			//if ($( document ).width() < 1240 && $( document ).width() > 768) mobile_scroll_fix = 210;
 
 			//scrolls to that section.
 			$('html, body').animate({scrollTop:target - mobile_scroll_fix}, 500);
@@ -32,7 +33,7 @@
 		});
 
 		//Pulling sections from main nav.
-		var sections = $('.leftside-blocks a[href^="#"]');
+		var sections = $('.nav-item a[href^="#"]');
 
 		// Go through each section to see if it's at the top.
 		// if it is add an active class
@@ -52,12 +53,14 @@
 				var target = getTargetTop(section);
 				
 				//Check if section is at the top of the page.
+				if ( scrolledTo == target){sections.removeClass("active-fix")}
 				if (scrolledTo > target - threshold && scrolledTo < target + threshold) {
 					//remove all selected elements
+					
 					sections.removeClass("active");
 
 					//add current selected element.
-					section.addClass("active");
+					section.addClass("active");					
 
 				}
 				if($(window).scrollTop() + $(window).height() == $(document).height()) { //fix for small last div
@@ -66,6 +69,7 @@
 
 					//add current selected element.
 					section.addClass("active");
+					return;
 				}
 
 			};
