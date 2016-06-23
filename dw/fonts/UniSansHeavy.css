@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'UniSansHeavy';
+    src: url('fonts/UniSansHeavy.eot');
+    src: url('fonts/UniSansHeavy.eot') format('embedded-opentype'),
+         url('fonts/UniSansHeavy.woff2') format('woff2'),
+         url('fonts/UniSansHeavy.woff') format('woff'),
+         url('fonts/UniSansHeavy.ttf') format('truetype'),
+         url('fonts/UniSansHeavy.svg#UniSansHeavy') format('svg');
+}

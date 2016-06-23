@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'UniSansThinItalic';
+    src: url('fonts/UniSansThinItalic.eot');
+    src: url('fonts/UniSansThinItalic.eot') format('embedded-opentype'),
+         url('fonts/UniSansThinItalic.woff2') format('woff2'),
+         url('fonts/UniSansThinItalic.woff') format('woff'),
+         url('fonts/UniSansThinItalic.ttf') format('truetype'),
+         url('fonts/UniSansThinItalic.svg#UniSansThinItalic') format('svg');
+}
