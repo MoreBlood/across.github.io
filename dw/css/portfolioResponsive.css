@@ -73,12 +73,10 @@ video {
     }
     ul.nav-ul {
         height: 41px;
-        width: 600px;
     }
     li.nav-item {
-        height: 37px;
     }
-    #top-btn-img {
+    .main-icon {
         height: 28px;
         margin-top: -8px;
     }
@@ -90,7 +88,7 @@ video {
         width: 90%;
     }
     button.btn{
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
 }
 @media screen and (max-width: 948px) {
@@ -148,16 +146,14 @@ video {
     }
     ul.nav-ul {
         height: 28px;
-        width: 350px;
     }
     li.nav-item {
-        height: 24px;
         padding-right: 5px;
         padding-left: 4px;
     }
-    #top-btn-img {
-        height: 20px;
-        margin-top: -4px;
+    .main-icon {
+        height: 15px;
+        /* margin-top: -4px; */
     }
     #my-photo {
         width: 40%;
@@ -204,7 +200,7 @@ video {
         font-weight: 700;
         padding: 10px 0;
         border-width: 0;
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
     .social {
         height: 70px;
@@ -266,14 +262,12 @@ video {
         top: -35px;
     }
     .topNav {
-        font-size: 12px;
+        font-size: 14px;
     }
     ul.nav-ul {
         height: 24px;
-        width: 260px;
     }
     li.nav-item {
-        height: 20px;
         padding-right: 5px;
         padding-left: 4px;
     }

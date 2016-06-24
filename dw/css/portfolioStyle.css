@@ -211,13 +211,14 @@ li.nav-item {
     border-right-width: 2px;
     border-color: rgba(244, 67, 54, 0.50);
     padding-left: 18px;
-    height: 46px;
-    padding-top: 4px;
+    display: flex;
+    align-items: center;
+    /* height: 100%; */
 }
 ul.nav-ul {
-    height: 50px;
-    width: 690px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 li.last-item {
     border-right-width: 0px!important;
@@ -273,7 +274,7 @@ span#bold-text {
     /* vertical-align: middle; */
     margin: 0 auto;
 }
-.category:after {
+/*.category:after {
 				-moz-transition: width 0.85s ease;
 				-webkit-transition: width 0.85s ease;
 				-ms-transition: width 0.85s ease;
@@ -286,9 +287,9 @@ span#bold-text {
 				content: '';
 				display: block;
 				height: 1px;
-				/* position: absolute; */
+				
 				width: 100%;
-			}
+			}*/
 .about {
     background-image: url(../img/forest.jpg);
     background-attachment: fixed;
@@ -559,10 +560,9 @@ textarea:invalid {
     box-shadow: inset 0 -1px 1px rgba(245, 0, 0, 0.8);
 }
 #top-btn-img {
-    margin-top: -8px;
 }
 .clearfix_soc {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 .img-soc.vk {
     background: no-repeat url(../img/social.png)0 4px;
@@ -765,4 +765,27 @@ span.logo {
 
 .hello-3 {
     animation-delay: 500ms;
+}
+
+.main-icon {
+    width: 32px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+
+.svg-back {height: 32px;width: 32px;}
+
+svg.top-arrow {
+    fill: #f44336;
+    transition: all linear 0.2s;
+}
+
+svg.top-arrow {}
+
+svg.top-arrow:hover {
+    fill: black;
 }
