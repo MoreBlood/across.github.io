@@ -76,9 +76,8 @@ video {
     }
     li.nav-item {
     }
-    .main-icon {
-        height: 28px;
-        margin-top: -8px;
+    .svg-back {
+        height: 30px;        
     }
     #about-me-text {
         font-size: 20px;
@@ -151,9 +150,8 @@ video {
         padding-right: 5px;
         padding-left: 4px;
     }
-    .main-icon {
-        height: 15px;
-        /* margin-top: -4px; */
+    .svg-back {
+        height: 20px;        
     }
     #my-photo {
         width: 40%;
