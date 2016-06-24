@@ -28,9 +28,8 @@ video {
     }
     .mbdes {
         font-size: 45px;
-        padding-left: 70px;
-        /*change everywhere!*/
         
+        /*change everywhere!*/
         height: 85px;
         margin-top: 40px;
     }
@@ -55,7 +54,6 @@ video {
     }
     .mbdes {
         font-size: 40px;
-        padding-left: 50px;
         height: 75px;
         margin-top: 35px;
     }
@@ -97,7 +95,6 @@ video {
     }
     .mbdes {
         font-size: 35px;
-        padding-left: 35px;
         height: 65px;
         margin-top: 30px;
     }
@@ -125,7 +122,6 @@ video {
     }
     .mbdes {
         font-size: 30px;
-        padding-left: 25px;
         height: 55px;
         margin-top: 20px;
     }

@@ -72,11 +72,11 @@ a:visited {
 }
 /* Header & HERO styles*/
 
-.logo {
+/*.logo {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-}
+}*/
 .heroHeader {}
 /* Navigation styles*/
 
@@ -180,16 +180,19 @@ a:visited {
     color: white;
     font-size: 50px;
     text-align: left;
-    padding-left: 90px;
     background: #f44336;
     height: 100px;
     margin-top: 45px;
+    display: table;
+    width: 95%;
+    padding-left: 5%;
 }
 span#des {
     font-family: Uni-Sans-thin-italic;
 }
 .center-text {
-    vertical-align: sub;
+    display: table-cell;
+    vertical-align:middle;
 }
 .topNav {
     background: white;
@@ -249,20 +252,19 @@ span#bold-text {
 }
 .header-back {
     height: 280px;
-    text-align: center;
+    /* text-align: center; */
     background: rgba(255, 255, 255, 0.78);
     margin-top: 70px;
+    display: table;
+    width: 100%;
 }
 .category {
     background: rgba(255, 255, 255, 0);
     color: black;
-    /* text-decoration: underline; */
     font-size: 50px;
-    /* position: relative; */
-    /* top: 38%; */
-    display: inline-block;
-    vertical-align: middle;
     width: 96%;
+    display: table-cell;
+    vertical-align:middle;
 }
 .about {
     background-image: url(../img/forest.jpg);
@@ -538,13 +540,6 @@ textarea:invalid {
 #top-btn-img {
     margin-top: -8px;
 }
-.interested {} .header-back:before {
-                   /* content: ''; */
-                   display: inline-block;
-                   height: 100%;
-                   vertical-align: middle;
-                   /* margin-right: -0.25em; */
-               }
 .clearfix_soc {
     padding-bottom: 50px;
 }
@@ -559,4 +554,9 @@ textarea:invalid {
 }
 .img-soc.yt {
     background: no-repeat url(../img/social.png)-122px 4px;
+}
+
+span.logo {
+    display: table-cell;
+    vertical-align:middle;
 }
