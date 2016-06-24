@@ -123,7 +123,7 @@ video {
     .mbdes {
         font-size: 30px;
         height: 55px;
-        margin-top: 20px;
+        margin-top: 0px;
     }
     .category-work {
         width: 100%;
@@ -197,15 +197,13 @@ video {
         margin-bottom: 0px;
     }
     .social {
-        height: 65px;
+        height: 70px;
         color: white;
         font-size: 30px;
-        padding-top: 20px
+        /* padding-top: 20px */
     }
     .img-soc {
         height: 60px;
-        position: relative;
-        top: -8px;
         content: "";
     }
     .footer-text {
@@ -220,12 +218,9 @@ video {
         height: 65px;
         color: white;
         font-size: 20px;
-        padding-top: 25px
+        /* padding-top: 25px */
     }
     .img-soc {
-        height: 60px;
-        position: relative;
-        top: -8px;
         margin-right: 10%;
         margin-left: 25px;
     }
@@ -293,7 +288,6 @@ video {
         height: 65px;
         color: white;
         font-size: 18px;
-        padding-top: 25px
     }
     .img-soc {
         margin-right: 5%;

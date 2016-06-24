@@ -390,16 +390,14 @@ button.btn {
     float: right;
 }
 .social {
-    height: 83px;
+    height: 100px;
     width: 100%;
     font-family: HelveticaNeueCyr-Thin;
     color: white;
     font-size: 45px;
-    padding-top: 17px;
-    /* text-decoration: line-through; */
-
     transition: all 0.3s linear;
-    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
 }
 img {} .social-image {
            padding: 16px;
