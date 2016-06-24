@@ -164,6 +164,7 @@ video {
         padding-bottom: 35px;
         width: 90%;
         padding-right: 5%;
+        line-height: 22px;
     }
     .photo {
         border-width: 5px;
