@@ -1,6 +1,6 @@
 /*
 /*
- * HTML5 ✰ Boilerplate v3.0.2
+ * HTML5 âœ° Boilerplate v3.0.2
  *
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -261,7 +261,7 @@ td { vertical-align: top; }
 /* Contain floats: h5bp.com/q */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+.clearfix { *zoom: 1;/* width: 80%; *//* margin: 0 auto; */}
 
 
 /* ==|== print styles =======================================================

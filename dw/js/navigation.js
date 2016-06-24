@@ -21,7 +21,7 @@ $('#nav a[href^="#"]').click(function (event) {
     var target = getTargetTop($(this));
     $('.nav-item a[href^="#"]').removeClass("active-fix");
     $(this).addClass("active-fix");
-    console.log("fix added");
+    //console.log("fix added");
 
     var nav_height = $(".topNav").height()
     //scrolls to that section.
@@ -64,7 +64,7 @@ function checkSectionSelected(scrolledTo) {
         //Check if section is at the top of the page.
         if (scrolledTo == target) {
             sections.removeClass("active-fix");
-            console.log("fix removed")
+            //console.log("fix removed")
         }
         if (scrolledTo > target - threshold && scrolledTo < target + threshold) {
             //remove all selected elements
@@ -75,7 +75,7 @@ function checkSectionSelected(scrolledTo) {
             section.addClass("active");
 
         }
-        if ($(window).scrollTop() + $(window).height() > $(document).height()) { //fix for small last div
+        /*if ($(window).scrollTop() + $(window).height() > $(document).height()) { //fix for small last div
             //remove all selected elements
             sections.removeClass("active");
             //sections.removeClass("active-fix");
@@ -83,7 +83,7 @@ function checkSectionSelected(scrolledTo) {
             //add current selected element.
             section.addClass("active");
             alert("kek");
-        }
+        }*/
     };
 }
 

@@ -24,7 +24,7 @@ video {
         font-size: 65px;
     }
     .header-back {
-        height: 250px;
+        height: 170px;
     }
     .mbdes {
         font-size: 45px;
@@ -32,6 +32,7 @@ video {
         /*change everywhere!*/
         height: 85px;
         margin-top: 40px;
+        overflow: hidden;
     }
     .story {
         padding-top: 50px;
@@ -43,6 +44,10 @@ video {
         font-size: 25px;
         padding-top: 85px;
     }
+    .clearfix {
+    width: 100%;
+    margin: 0 auto;
+    }
 }
 @media screen and (max-width: 1234px) {
     .header,
@@ -50,7 +55,7 @@ video {
         font-size: 50px;
     }
     .header-back {
-        height: 220px;
+        height: 160px;
     }
     .mbdes {
         font-size: 40px;
@@ -84,6 +89,9 @@ video {
     .about {} .type-of-contact {
         width: 90%;
     }
+    button.btn{
+        margin-bottom: 0px;
+    }
 }
 @media screen and (max-width: 948px) {
     .header,
@@ -91,7 +99,7 @@ video {
         font-size: 40px;
     }
     .header-back {
-        height: 200px;
+        height: 150px;
     }
     .mbdes {
         font-size: 35px;
@@ -155,8 +163,9 @@ video {
         width: 40%;
         padding-left: 30%;
         padding-right: 30%;
-        padding-bottom: 5%;
+        /* padding-bottom: 5%; */
         padding-top: 0px;
+        margin-bottom: 40px;
     }
     #about-me-text {
         font-size: 20px;

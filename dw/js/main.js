@@ -1,4 +1,7 @@
 $(document).ready(function () {
+	/*$("#works").click(function(){
+		$("#my-story2").addClass("bounceIn");
+	})*/
 
     var target = $('.topNav').position();
 
