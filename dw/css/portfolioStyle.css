@@ -580,7 +580,7 @@ textarea:invalid {
 span.logo {
     /* display: table-cell; */
     /* vertical-align:middle; */
-    animation-delay: 100ms;
+    animation-delay: 500ms;
 }
 
        .slideInRight {
