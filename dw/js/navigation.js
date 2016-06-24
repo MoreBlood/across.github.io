@@ -27,14 +27,13 @@ $('#nav a[href^="#"]').click(function (event) {
     //scrolls to that section.
     if ($('.topNav').css("position") == 'fixed'){
     $('html, body').animate({
-        scrollTop: (target)
+        scrollTop: (target - nav_height)
     }, 500);
 	}
 	else {
 		$('html, body').animate({
-        scrollTop: (target - nav_height)
-    }, 500);
-	}
+        scrollTop: (target - nav_height*2)
+    }, 500);	
 	}
 
     //prevent the browser from jumping down to section.
