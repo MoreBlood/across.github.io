@@ -257,13 +257,12 @@ span#bold-text {
     background: rgba(255, 255, 255, 0);
     color: black;
     /* text-decoration: underline; */
-
     font-size: 50px;
     /* position: relative; */
     /* top: 38%; */
-
     display: inline-block;
     vertical-align: middle;
+    width: 96%;
 }
 .about {
     background-image: url(../img/forest.jpg);
@@ -544,7 +543,7 @@ textarea:invalid {
                    display: inline-block;
                    height: 100%;
                    vertical-align: middle;
-                   margin-right: -0.25em;
+                   /* margin-right: -0.25em; */
                }
 .clearfix_soc {
     padding-bottom: 50px;
