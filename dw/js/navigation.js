@@ -26,7 +26,7 @@ $('#nav a[href^="#"]').click(function (event) {
 
     //scrolls to that section.
     $('html, body').animate({
-        scrollTop: target - 50
+        scrollTop: target - $(".topNav").height()
     }, 500);
 
     //prevent the browser from jumping down to section.
