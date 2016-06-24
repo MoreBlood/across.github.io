@@ -19,7 +19,9 @@
 			//gets the distance from the top of the 
 			//section refenced in the href.
 			var target = getTargetTop($(this));
+			$('.nav-item a[href^="#"]').removeClass("active-fix");
 			$(this).addClass("active-fix");
+			console.log("fix added");
 			var mobile_scroll_fix = 0;
 			//if ($( document ).width() < 768) mobile_scroll_fix = 90;
 			//if ($( document ).width() < 1240 && $( document ).width() > 768) mobile_scroll_fix = 210;
@@ -40,7 +42,7 @@
 		function checkSectionSelected(scrolledTo){
 			
 			//How close the top has to be to the section.
-			var threshold = 100;
+			var threshold = 200;
 
 			var i;
 
@@ -53,25 +55,25 @@
 				var target = getTargetTop(section);
 				
 				//Check if section is at the top of the page.
-				if ( scrolledTo == target){sections.removeClass("active-fix")}
+				if ( scrolledTo == target){sections.removeClass("active-fix"); console.log("fix removed")}
 				if (scrolledTo > target - threshold && scrolledTo < target + threshold) {
 					//remove all selected elements
 					
 					sections.removeClass("active");
-
+					sections.removeClass("active-fix");
 					//add current selected element.
 					section.addClass("active");					
 
 				}
-				if($(window).scrollTop() + $(window).height() == $(document).height()) { //fix for small last div
+				if($(window).scrollTop() + $(window).height() > $(document).height()) { //fix for small last div
 					//remove all selected elements
 					sections.removeClass("active");
+					//sections.removeClass("active-fix");
 
 					//add current selected element.
 					section.addClass("active");
-					return;
+					alert("kek");				
 				}
-
 			};
 		}
 

@@ -23,7 +23,7 @@
 
     $(window).scroll(function(){
         if ($(window).scrollTop() > target.top){
-            $('.topNav').css({position: 'fixed', marginTop: '-145px'});
+            $('.topNav').css({position: 'fixed', marginTop: '0 !important', top: 0});
             //$('.topNav').addClass( "nav-deselected");
             $('.top-btn').css({opacity: 1});
         }

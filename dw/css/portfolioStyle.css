@@ -244,7 +244,7 @@ background-attachment: fixed;
 box-shadow: inset 0px -5px 84px rgba(0, 0, 0, 0.55);
 }
 
-span.thin-header {
+.thin-header {
     font-family: HelveticaNeueCyr-UltraLight;
     font-size: 80px;
     color: white;
@@ -277,10 +277,10 @@ span#bold-text {
     margin-top: 70px;
 }
 
-.category {background: rgba(255, 255, 255, 0);color: black;/* text-decoration: underline; */font-size: 50px;position: relative;top: 38%;}
+.category {background: rgba(255, 255, 255, 0);color: black;/* text-decoration: underline; */font-size: 50px;/* position: relative; *//* top: 38%; */display: inline-block;vertical-align: middle;}
 
 .about {
-    height: calc(760px + 280px);
+    /* height: calc(760px + 280px); */
     background-image: url(../img/forest.jpg);
     background-attachment: fixed;
 }
@@ -291,19 +291,24 @@ span#bold-text {
 }
 
 #about-me-text {
-    width: 50%;
+    width: 45%;
     text-align: left;
-    padding-left: 90px;
+    padding-left: 5%;
     font-size: 35px;
     padding-top: 85px;
     float: left;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.66);
+    padding-bottom: 85px;
 }
 
-div#my-photo {
+#my-photo {
     float: left;
     padding-top: 85px;
-    padding-left: 100px;
+    /* padding-left: 100px; */
+    width: 30%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 30px;
 }
 
 .photo {
@@ -312,9 +317,10 @@ div#my-photo {
     border-color: white;
     border-style: solid;
     box-shadow: 0px 8px 12px -5px rgba(0, 0, 0, 0.53);
+    width: 100%;
 }
 
-.clear-header {
+.header-back.clear-header {
     margin-top: 0;
 }
 
@@ -327,11 +333,12 @@ div#my-photo {
 }
 
 .type-of-contact {
-    width: 45%;
+    width: 43%;
     float: left;
-    margin-left: 90px;
+    margin-left: 5%;
     padding-top: 70px;
     text-align: left;
+    /* padding-right: 5%; */
 }
 
 .contact {
@@ -343,7 +350,6 @@ div#my-photo {
     background: -ms-linear-gradient(45deg, rgba(0,179,255,1) 0%, rgba(0,255,119,1) 100%);
     background: linear-gradient(45deg, rgba(0,179,255,1) 0%, rgba(0,255,119,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b3ff', endColorstr='#00ff77', GradientType=1 );
-    height: 960px;
     background-attachment: fixed;
 }
 
@@ -369,8 +375,9 @@ form input {}
 }
 
 form textarea {
-    width: 630px;
+    width: 95%;
     height: 220px;
+    max-height: 220px;
 }
 
 button.btn {
@@ -388,12 +395,11 @@ button.btn {
     border-width: 0;
     font-family: HelveticaNeueCyr-roman;
     float: left;
-    margin-left: 546px;
 }
 
 .social {
     height: 83px;
-    width: 700px;
+    width: 100%;
     font-family: HelveticaNeueCyr-Thin;
     color: white;
     font-size: 45px;
@@ -433,7 +439,7 @@ img {}
     width: 80px;
     height: 80px;
     float: left;
-    margin-right: 200px;
+    margin-right: 15%;
     margin-left: 48px;
 }
 
@@ -570,4 +576,23 @@ input:valid, textarea:valid {
 }
 input:invalid, textarea:invalid {
     box-shadow: inset 0px -1px 1px rgba(245, 0, 0, 0.8);
+}
+
+#top-btn-img {
+    margin-top: -8px;
+}
+
+.interested {
+}
+
+.header-back:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.clearfix_soc {
+    padding-bottom: 50px;
 }
