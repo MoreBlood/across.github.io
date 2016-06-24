@@ -23,11 +23,19 @@ $('#nav a[href^="#"]').click(function (event) {
     $(this).addClass("active-fix");
     console.log("fix added");
 
-
+    var nav_height = $(".topNav").height()
     //scrolls to that section.
+    if ($('.topNav').css("position") == 'fixed'){
     $('html, body').animate({
-        scrollTop: target - $(".topNav").height()
+        scrollTop: (target)
     }, 500);
+	}
+	else {
+		$('html, body').animate({
+        scrollTop: (target - nav_height)
+    }, 500);
+	}
+	}
 
     //prevent the browser from jumping down to section.
     event.preventDefault();
