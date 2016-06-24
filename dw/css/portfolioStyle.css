@@ -539,7 +539,7 @@ textarea:invalid {
     margin-top: -8px;
 }
 .interested {} .header-back:before {
-                   content: '';
+                   /* content: ''; */
                    display: inline-block;
                    height: 100%;
                    vertical-align: middle;
