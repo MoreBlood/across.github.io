@@ -183,9 +183,11 @@ a:visited {
     background: #f44336;
     height: 100px;
     margin-top: 45px;
-    display: table;
+    /* display: table; */
     width: 95%;
     padding-left: 5%;
+    display: flex;
+    align-items: center;
 }
 span#des {
     font-family: Uni-Sans-thin-italic;
@@ -252,19 +254,21 @@ span#bold-text {
 }
 .header-back {
     height: 280px;
-    /* text-align: center; */
+    text-align: center;
     background: rgba(255, 255, 255, 0.78);
     margin-top: 70px;
-    display: table;
+    /* display: table; */
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 .category {
     background: rgba(255, 255, 255, 0);
     color: black;
     font-size: 50px;
     width: 96%;
-    display: table-cell;
-    vertical-align:middle;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
 }
 .about {
     background-image: url(../img/forest.jpg);
@@ -557,6 +561,6 @@ textarea:invalid {
 }
 
 span.logo {
-    display: table-cell;
-    vertical-align:middle;
+    /* display: table-cell; */
+    /* vertical-align:middle; */
 }
