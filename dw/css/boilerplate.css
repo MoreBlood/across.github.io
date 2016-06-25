@@ -1,6 +1,6 @@
 /*
 /*
- * HTML5 âœ° Boilerplate v3.0.2
+ * HTML5 Ã¢Å“Â° Boilerplate v3.0.2
  *
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -102,7 +102,7 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul, ol {margin: 0.4em 0;padding: 0 0 0 40px;}
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol {list-style: none;list-style-image: none;margin: 0;padding: 0;}
 
