@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+			   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+               <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+               <meta charset="utf-8">
+               <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+               <meta name="description" content="MoreBlood Design website portfolio">
+               <meta name="keywords" content="Design, VK, MoreBlood">
+               <meta name="author" content="MoreBlood - Artihovich Kirill">              
+               <script type="text/javascript">
+
+					  function getCookie(name) {
+					  var matches = document.cookie.match(new RegExp(
+					    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+					  ));
+					  return matches ? decodeURIComponent(matches[1]) : undefined;
+					  }
+
+					function lang_set () {
+						var lang = "";
+						if (getCookie('lang') == undefined) lang = "en";
+						else lang = getCookie('lang');
+						var style = document.createElement('style');
+						style.innerHTML = (lang == 'ru' ? 'en' : 'ru')  + "{display:none;}" + lang + "{display:inherit;}";
+						document.head.appendChild(style);      
+					    
+					};
+
+
+               </script>
+	<title>404</title>
+	<link href="css/portfolioStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="lang_set()" class="body_nf">
+<div class="hide_parent">
+<div class="hide_scroll">
+	<div class="not-found">
+		<span class="big404 zoomIn">404</span>
+		<span class="small404 zoomIn"><en>nothing is there</en><ru>ничего нет......</ru></span>
+		<img class="nyan slideInLeft"  src="img/Tumblr_static_nyan_cat_animation_new.gif">
+	</div>
+<div class="or not"><span class="small404 zoomIn"><a href = "/"><en>or not...</en><ru>или есть...</ru></a></span>
+</div>
+</div>
+</div>
+
+</body>
+</html>

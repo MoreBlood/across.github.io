@@ -12,10 +12,7 @@ video {
 }
 
 .fluid {
-    clear: both;
-    margin-left: 0;
     width: 100%;
-    display: block;
 }
 
 @media screen and (max-width: 1560px) {
@@ -44,6 +41,10 @@ video {
         font-size: 25px;
         padding-top: 85px;
         line-height: 26px;
+    }
+    .like img{
+        height:110px;
+        width:110px;
     }
     .clearfix {
     width: 100%;
@@ -91,6 +92,10 @@ video {
     button.btn{
         margin-bottom: 20px;
     }
+    .like img{
+        height:100px;
+        width:100px;
+    }
 }
 @media screen and (max-width: 948px) {
     .header,
@@ -104,6 +109,10 @@ video {
         font-size: 35px;
         height: 65px;
         margin-top: 30px;
+    }
+    .like img{
+        height:72px;
+        width:72px;
     }
     .category-work {
         width: 50%;
@@ -131,6 +140,12 @@ video {
         font-size: 30px;
         height: 55px;
         margin-top: 10px;
+    }
+    .language{
+        font-size:20px;
+    }
+    .en {
+    margin-right: 5px;
     }
     .category-work {
         width: 100%;
@@ -163,6 +178,13 @@ video {
         padding-top: 0px;
         margin-bottom: 40px;
     }
+    .like{
+        top:0px;
+    }
+    .like img{
+        height:64px;
+        width:64px;
+    }
     #about-me-text {
         font-size: 20px;
         padding-top: 35px;
@@ -173,6 +195,7 @@ video {
     }
     .photo {
         border-width: 5px;
+        max-width: calc(100% - 10px);
     }
     .interested {
         font-size: 25px;
@@ -195,12 +218,13 @@ video {
         width: calc(100% - 6px - 15px);
     }
     button.btn {
-        width: 113PX;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 700;
         padding: 10px 0;
         border-width: 0;
         margin-bottom: 20px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     .social {
         height: 70px;
@@ -233,6 +257,13 @@ video {
     .footer-text {
         font-size: 25px;
     }
+    .mbdes {
+        font-size: 22px;
+    }
+    .like img{
+        height:32px;
+        width:32px;
+    }
 }
 @media screen and (max-width: 319px) {
     .header,
@@ -250,6 +281,12 @@ video {
         padding-left: 15px;
         height: 38px;
         margin-top: 10px;
+    }
+    .language{
+        font-size:15px;
+    }
+    .en {
+    margin-right: 3px;
     }
     .category-work {
         width: 100%;
@@ -303,4 +340,12 @@ video {
     .contact-header {
         font-size: 27px;
     }
+    .like img{
+        height:24px;
+        width:24px;
+    }
+}
+
+.category-work a {
+    text-decoration: inherit;
 }

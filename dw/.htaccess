@@ -1,0 +1,7 @@
+<ifModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+<FilesMatch ".(gif|jpg|jpeg|png|ico|swf|pdf|ttf|otf|woff)$">
+  Header set Cache-Control "max-age=604800"
+</FilesMatch>
+ErrorDocument 404 /404.html
