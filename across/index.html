@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>ACross</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIpGMzg2Y_rgQsA4K8O6RljzkF6kRLDy4&signed_in=true"></script>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script src="external/jquery/jquery.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/cookie.js"></script>
+    <script src="scripts/jquery-clear-button.js"></script>
+    <script src="scripts/parse_server_request.js"></script>
+    <script src="scripts/jquery.imask.js"></script>
+    <link href="jquery-ui.css" rel="stylesheet">
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/sidebar_time_draw.js"></script>
+    <script src="scripts/map_across.js"></script>
+</head>
+
+<body class="body">
+    <div id="doge_wow" style="position: absolute; display : none;"><img id="doge_image" src="images/doge.png" style="position: relative; top: 100vh;"> </div>
+    <div id="sidebar_ctrl"></div>
+    <section id="sidebar_st">
+        <section id="sidebar">
+            <div id="logo">
+                <!--<img src="images/logo.png" height="35px"> -->
+            </div>
+            <section class="block_handler" id="stops_selector">
+                <!--<div id="top_clearfix" style="margin-top: 5vh"></div>-->
+                <div class="header">Остановки</div>
+                <div class="input_clear_fix">
+                    <input class="input" id="top_input" placeholder="Отправление">
+                    <input class="input" id="bottom_input" style="margin-bottom: 10px;" placeholder="Прибытие">
+                    <div id="slider_time"></div>
+                    <input class="input" id="time_input" style="width: 56px;height: 27px;padding-bottom: 4px;font-size: 19px;padding-right: 2px;padding-top: 4px;padding-left: 2px;text-align: center;margin-bottom: 0px;margin-top: 0px;float: left;margin-right: 4px;" placeholder="00:00">
+                    <search style="box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.08); margin-left: 0px;">
+                        <div class="search_image_background">
+                            <img class="search_image" src="images/search.png">
+                        </div>
+                        <div class="button_text">Поиск</div>
+                    </search>
+                    <button_swap style="border-width: 0px;" title="Поменять местами">
+                        <div id="swap_image_background"><img id="swap_image" src="images/swap.png">
+                        </div>
+                    </button_swap>
+                    <demo style="box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.08); margin-left: 113px;  margin-top: 5px;" id="demo">
+                        <div class="search_image_background">
+                            <img class="search_image" src="images/search.png">
+                        </div>
+                        <div class="button_text">DEMO</div>
+                    </demo>
+                </div>
+            </section>
+            <hr style="border-style: ridge; padding-top: 13px; border-width: 0px 0px 1px 0px; opacity: 0.5;">
+            <section class="block_handler" id="transport_selector">
+                <div class="header">транспорт </div>
+                <section class="transport_handler">
+                    <div id="checkboxes">
+                        <input type="checkbox" name="rGroup" value="3" id="r1" />
+                        <label class="transport_type" for="r1" style="background-color: #2ecc71;" title="Автобус">
+                            <div id="bus" style="padding-top: 9px; "><img src="images/bus.png" height="39px"> </div>
+                        </label>
+                        <input type="checkbox" name="rGroup" value="3" id="r2" />
+                        <label class="transport_type" for="r2" style="background-color: #f1c40f;" title="Маршрутное такси">
+                            <div id="bus_small" style="padding-top: 8px; "><img src="images/bus_small.png" height="40px"> </div>
+                        </label>
+                        <input type="checkbox" name="rGroup" value="3" id="r3" />
+                        <label class="transport_type" for="r3" style="background-color: #3498db;margin-right: 0px;">
+                            <div id="trolleybus" style="padding-top: 8px;" title="Тролейбус"><img src="images/trolleybus.png" height="40px"> </div>
+                        </label>
+                    </div>
+                </section>
+                <div class="warning" id="no_transport"><b>Выберите транспорт!</b>
+                </div>
+            </section>
+            <hr style="border-style: ridge;  padding-top: 13px; border-width: 0px 0px 1px 0px; opacity: 0.5;">
+            <section class="block_handler" id="type_selector">
+                <div class="header">приоритет при поиске </div>
+                <section class="transport_handler">
+                    <div id="type_choice">
+                        <input type="radio" name="rGroup" value="3" id="c1" checked="checked" />
+                        <label class="choice" for="c1" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px" title="Приоритет скорости, в ущерб стоимости поездки">
+                            <div id="fast" style="padding-top: 8px; "><img src="images/man-running.png" height="40px">
+                            </div>
+                        </label>
+                        <input type="radio" name="rGroup" value="3" id="c2" />
+                        <label class="choice" for="c2" title="Баланс стоимость/скорость">
+                            <div id="balance" style="padding-top: 8px;"></div><img src="images/parameters.png" height="40px">
+                        </label>
+                        <input type="radio" name="rGroup" value="2" id="c3" />
+                        <label class="choice" for="c3" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px" title="Самый дешевый вариант">
+                            <div id="expensive" style="padding-top: 8px; "><img src="images/money.png" height="40px">
+                            </div>
+                        </label>
+                    </div>
+                </section>
+            </section>
+            <hr style="border-style: ridge;  padding-top: 13px; border-width: 0px 0px 1px 0px; opacity: 0.5;">
+            <section class="block_handler" id="cost_time_selector">
+                <div id="cost_time">
+                    <div class="header">Цена минуты</div>
+                    <div class="input_clear_fix">
+                        <input class="input" id="cost_input" placeholder="Стоимость руб.">
+                    </div>
+                </div>
+            </section>
+            <div class="route_pop" id="pop_id">
+                <div id="info_handler">
+                    <div class="transport_id" id="start_id">17</div>
+                    <div class="transport_time" id="start_time">19:40</div>
+                </div>
+                <div class="pop_arrow"></div>
+            </div>
+        </section>
+    </section>
+    <section id="map_handler">
+        <div id="map"></div>
+    </section>
+    <section id="sidebar_time" name="sidebar_time"></section>
+    <section id="elements_to_copy" style="display: none;">
+        <div id="trh">
+            <div class="dots_handler">
+                <div id="line_bus"></div>
+                <div class="dot" id="dot_start"></div>
+                <div class="dot" id="dot_trsp"></div>
+                <div class="dot" id="dot_stop"></div>
+                <div class="dot" id="dot_cross"></div>
+                <div class="dot" id="dot_cross_out"></div>
+            </div>
+            <div class="stop_time_handler">
+                <div id="stop_start">
+                    <div class="time">TIME</div>
+                    <div class="stop">STOP_NAME - </div>
+                    <br>
+                </div>
+                <div id="trans_stop">
+                    <div class="time">TIME</div>
+                    <div class="stop">STOP_NAME - </div>
+                    <br>
+                </div>
+                <div id="last_stop">
+                    <div class="time">TIME</div>
+                    <div class="stop">STOP_NAME - </div>
+                    <br>
+                </div>
+                <div id="stop_from">
+                    <div class="time">TIME</div>
+                    <div class="stop">STOP_NAME - </div>
+                    <br>
+                </div>
+                <div id="stop_to">
+                    <div class="time">TIME</div>
+                    <div class="stop">STOP_NAME - </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div id="draw_line"></div>
+        <div class="header_transport" id="head_bus">&nbsp;</div>
+        <div id="trh_clear">
+            <div class="dots_handler"></div>
+            <div class="stop_time_handler"></div>
+        </div>
+    </section>
+</body>
+
+</html>
