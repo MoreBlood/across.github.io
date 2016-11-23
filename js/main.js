@@ -120,7 +120,11 @@ $(document).ready(function () {
               $("#form").replaceWith("<div class='form_completed zoomIn' style='height:" + form_height + "px'>  <div class='thank_holder'><img class='thank_you' src='img/round-done-button.png'></div><div class='thank_text'><ru>Спасибо!</ru><en>Thank you!</en></div></div>");
               preventSpam++;             
        		    //alert("mail - success");
-    		}
+    		},
+            error: function (){
+                var form_height = $("#form").outerHeight(true) + $(".btn").outerHeight(true);
+                $("#form").replaceWith("<div class='form_completed zoomIn' style='height:" + form_height + "px'>  <div class='thank_holder'><img class='thank_you' src='img/cancel-button.png'></div><div class='thank_text'><ru>Что пошло не так....</ru><en>Ooops...</en></div></div>");
+            }
         });
     });
 });
