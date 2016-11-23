@@ -1,3 +1,5 @@
+var preventSpam = 0;
+
 // возвращает cookie с именем name, если есть, если нет, то undefined
 function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
@@ -105,16 +107,19 @@ $(document).ready(function () {
         };
     });
 
-    $("#form").bind('submit', function () {
-
+    $("#form").bind('submit', function (e) {
+        e.preventDefault();
         var form_data = $(this).serialize();
         //console.log(form_data);
-        $.ajax({
+        if (preventSpam == 0) $.ajax({
             type: "POST",
             url: "mail.php",
             data: form_data,
             success: function(){
-       		 //alert("mail - success");
+              var form_height = $("#form").outerHeight(true) + $(".btn").outerHeight(true);
+              $("#form").replaceWith("<div class='form_completed zoomIn' style='height:" + form_height + "px'>  <div class='thank_holder'><img class='thank_you' src='img/round-done-button.png'></div><div class='thank_text'><ru>Спасибо!</ru><en>Thank you!</en></div></div>");
+              preventSpam++;             
+       		    //alert("mail - success");
     		}
         });
     });

@@ -1,6 +1,6 @@
 <?php
 if($_POST['name']&&$_POST['message']&&$_POST['email'] != ""){
-    $to = "ak@moreblood.xyz"; //Почта получателя
+    $to = "kek228arta@mail.ru"; //Почта получателя
     $subject = 'Обратная связь' ;
     $message = '
                         Имя: '.$_POST['name'].'

@@ -1,34 +1,24 @@
 // JavaScript Document
 
-
-
-
 var send_requset;
 var flag = false;
-
-
-
 
 $(function load_clear_buttons () {
 
     $( "#top_input" ).jQueryClearButton(); // вызов крестика для очистки полей
     $( "#bottom_input" ).jQueryClearButton();
     $( "#cost_input" ).jQueryClearButton();
-    //$( "#time_input" ).jQueryClearButton();
 
 })
 
 
 function GetSavedCookies() { // ставим cookie в формы
 
-
     var radio_mass = ["r1", "r2", "r3"];
 
     for (var i=0; i < radio_mass.length; i++ ){
         if (getCookie("transp_" + (i+1)) == "not_active") document.getElementById(radio_mass[i]).checked = "checked";
     }
-
-
 
     $('#top_input').val(getCookie("form_first"));
     $('#bottom_input').val(getCookie("form_second"));
@@ -54,26 +44,19 @@ function SaveCookies() { // заносим cookie в память (пока бе
     //setCookie("time_cost",$('#time_input').val(),time);
 
     for (var i=0; i < cookies_mass.length / 2; i++ ){
-
         if (document.getElementById(cookies_mass[i]).checked) setCookie("transp_" + (i+1),"not_active",time); else setCookie("transp_" + (i+1),"active",time);
         if (document.getElementById(cookies_mass[i+3]).checked) setCookie("choise_" + (i+1),"active",time); else setCookie("choise_" + (i+1),"not_active",time);
-
     }
-
 }
-//var stops = new Array();
 
 var availableTags = new Array();
-
-  $(function() {
+$(function() {
       /*$.getJSON("data/stops.json",function (json) {
-
           for (var i = 0; i < json.results.length; i++) {
               stops[i] =  json.results[i].name
           }
-
       });*/
-       availableTags = ["28 июля",
+    availableTags = ["28 июля",
           "4-й Форт",
           "Абрикосовая",
           "Автобаза связи",
@@ -358,17 +341,8 @@ var availableTags = new Array();
           "Ямно",
           "Ясеневая",
        "Орджоникидзе","К.Маркса","Гимназия №1","Промстройбанк","Свердлова"];
-    $( "#top_input" ).autocomplete({source: availableTags}); // подсказка при заполенении формы
-	$( "#bottom_input" ).autocomplete({source: availableTags});
+    $( "#top_input, #bottom_input" ).autocomplete({source: availableTags}); // подсказка при заполенении формы
   });
-
-
-/*window.onload = function () { // пафасное появление sidebar'a
-    $( "#sidebar" ).fadeToggle( 1000, function() {
-    });
-
-}*/
-
 
 
  $(document).ready(function(){
@@ -379,10 +353,8 @@ var availableTags = new Array();
      });
 
      $( "#cost_time" ).hide(); // изначально прячем
-     //alert( document.cookie );
+
      $( document ).tooltip({track: true}); // трек мышки для подсказок
-
-
 
      $( "search" ).button(); // вызвод jquery модуля кнопки
      $( "button_swap" ).button();
@@ -396,7 +368,6 @@ var availableTags = new Array();
 		 animate: "slow"
 
      });
-     //$( "#slider_time" ).change( function() { alert("Hello"); } );
      
     $("button_swap").click(function () { // смена значений для назначений
         var temp = $('#top_input').val();
@@ -408,10 +379,7 @@ var availableTags = new Array();
     });
      $( "#no_transport" ).hide(); // прячем слой с подсказкой про отсутствие выбора транспорта
 
-     var time_shift = 0,
-         shifts = [0, 5, 10, 15, 30, 60, 120];
-
-
+     var shifts = [0, 5, 10, 15, 30, 60, 120];
 
      var time, minutes, hours, hours_plus_shift, minutes_plus_shift, time_plus_shift;
      var stopTimeUpdate = false;
@@ -424,7 +392,6 @@ var availableTags = new Array();
          else minutes = date.getMinutes();
          if (date.getHours() < 10) hours = "0" + date.getHours();
          else hours = date.getHours();
-             //minutes +=   $( "#slider_time" ).slider("value");
          time = hours + ':' + minutes;
          $('#time_input').val(time);
      }, 1000);
@@ -442,7 +409,7 @@ var availableTags = new Array();
 	 document.getElementById("slider_time").children[0].id = "shift_minutes";
 	 
 function change_shift(ui) {
-    //alert("We are in the game!");
+
 	var date = new Date();
     var current_time_in_minutes = date.getHours() * 60 + date.getMinutes();
     current_time_in_minutes_plus_shift = current_time_in_minutes + shifts[ui.value];
@@ -452,107 +419,75 @@ function change_shift(ui) {
     
 	if (minutes_plus_shift < 10) minutes_plus_shift = "0" + minutes_plus_shift;         
     if (hours_plus_shift < 10) hours_plus_shift = "0" + hours_plus_shift;
-    time_plus_shift = hours_plus_shift + ':' + minutes_plus_shift; 
+    time_plus_shift = hours_plus_shift % 24 + ':' + minutes_plus_shift;
 	
     $('#time_input').val(time_plus_shift);
 	document.getElementById("slider_time").children[0].innerHTML = "+" + shifts[ui.value] + "мин";
 	document.getElementById("slider_time").children[0].style.textAlign = "center";
-		
 	
 }
-
-
      $("search").click( function(){
+
          SaveCookies();
          
          var r1 = 1, r2 = 1, r3 = 1, c= 0;
 
-         if ( document.getElementById("r1").checked) r1 = 0; // флаги транспорта
-         if ( document.getElementById("r2").checked) r2 = 0;
-         if ( document.getElementById("r3").checked) r3 = 0;
+         if ($('#r1').prop('checked')) r1 = 0; // флаги транспорта
+         if ($('#r2').prop('checked')) r2 = 0;
+         if ($('#r3').prop('checked')) r3 = 0;
 
-
-
-
-         if ( document.getElementById("c1").checked) c = "F"; // типы приоритета
-         if ( document.getElementById("c2").checked) c = "C";
-         if ( document.getElementById("c3").checked) c = "M";
+         if ( $('#c1').prop('checked')) c = "F"; // типы приоритета
+         if ( $('#c2').prop('checked')) c = "C";
+         if ( $('#c3').prop('checked')) c = "M";
 
          var cost = parseInt($('#cost_input').val(), 10);
+
          if(isNaN(cost)) cost = 0;
 
-
-
          if (availableTags.indexOf($('#top_input').val()) == -1 || availableTags.indexOf($('#bottom_input').val()) == -1 || (r1+r2+r3 == 0) ){
-             //alert("Привет, ты че охуел?");
              $( "#no_transport" ).slideDown( "slow", function() {
              });
-             if (r1+r2+r3 != 0) document.getElementById("no_transport").innerHTML = "Выберите остановки!";
-             if (r1+r2+r3 == 0) document.getElementById("no_transport").innerHTML = "Выберите остановки и <br> транспорт!";
-             if (availableTags.indexOf($('#top_input').val()) != -1 && availableTags.indexOf($('#bottom_input').val()) != -1 && r1+r2+r3 != 0) document.getElementById("no_transport").innerHTML = "Выберите транспорт!";
+             if (r1+r2+r3 != 0) $('#no_transport').html("Выберите остановки!");
+             if (r1+r2+r3 == 0) $('#no_transport').html("Выберите транспорт! и <br> остановки");
+             if (availableTags.indexOf($('#top_input').val()) != -1 && availableTags.indexOf($('#bottom_input').val()) != -1 && r1+r2+r3 != 0)
+                 $('#no_transport').html("Выберите остановки!");
              return;
-
          }
          else {
              $( "#no_transport" ).slideUp( "slow", function() {
              });
          }
          send_requset = availableTags.indexOf($('#top_input').val()) + " " + availableTags.indexOf($('#bottom_input').val()) + " " + c + " " + cost +" " + /*"12:00"*/$('#time_input').val();
-         //alert(send_requset);
-
          parserfromserver();
-         //initMap();
-         //popup = new time_popup(map, popup_pos);
-         //alert( document.cookie );
-
 
      });
      $('#logo').click(function () {
-         //$("#sidebar_st").animate({ left: '-262px', opacity :0}, "slow");
          $("#map_handler").removeAttr("float: left");
-         //$("#map_handler").animate({ right: '0px', width:'992px'}, "slow");
-
-
-     })
+     });
 
      $('#cost_input').iMask({ // маска для ввода цены минуты
          type      : 'fixed'
          , mask      : '9999 руб.'
          , stripMask : false
          , maskEmptyChr : ' '
-
-
      });
-     /*$('#time_input').iMask({ // маска для ввода цены минуты
-         type      : 'fixed'
-         , mask      : '99:99'
-         , stripMask : false
-         , maskEmptyChr : ' '
-
-
-     });*/
 
      if (getCookie("choise_2") == "active") {
          $("#cost_time").fadeToggle("slow", function () {
              flag = true;
          });
      }
-
-
          $("#c2").click(function () { // показываем, если кликнули вторую кнопку ставим флаг да
              if (flag == false) {
              $("#cost_time").fadeToggle("slow", function () {
-
              });
              }
              flag = true;
          });
 
-
          $("#c1").click(function () { // прячем ставим флаг нет, чтобы не могли сработать эти обработчики снова
              if (flag == true) {
                  $("#cost_time").fadeToggle("slow", function () {
-                     // Animation complete.
                  });
                  flag = false;
              }
@@ -561,19 +496,8 @@ function change_shift(ui) {
          $("#c3").click(function () { // прячем **
              if (flag == true) {
                  $("#cost_time").fadeToggle("slow", function () {
-                     // Animation complete.
                  });
                  flag = false;
              }
          });
-     
-
-
-
-
-
-
  });
-
-//https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.07704652587041, 23.740843534469604&radius=5000&types=bus_station&key=AIzaSyDX3PwHZjDBxhdmU2tFWXzykqQ82a_q-9k
-//https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJB_f_eGIOIUcRk07TJHHH7W8&key=AIzaSyDX3PwHZjDBxhdmU2tFWXzykqQ82a_q-9k -- инфа по place_id

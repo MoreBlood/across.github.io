@@ -1071,3 +1071,26 @@ ru {
 .small404 a {
     color: white;
 }
+
+.form_completed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+img.thank_you {
+    height: 100%;
+}
+
+.thank_text {
+    height: initial;
+    font-family: HelveticaNeueCyr-Thin;
+    font-size: 40px;
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
+
+.thank_holder {
+    height: 50%;
+}
