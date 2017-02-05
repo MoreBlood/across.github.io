@@ -77,9 +77,9 @@
     flex-direction: column;
     justify-content: space-around;
     height: 62px;
-    flex-basis: 325px;
     margin-right: 15px;
     font-size: 18px;
+    flex-grow: 1;
 }
 
 .row {
@@ -156,7 +156,7 @@ input[type="text"] {
 }
 
 body {
-    font-family: HelveticaNeueCyr;
+    font-family: Helvetica;
     margin: 0;
 }
 
@@ -241,9 +241,9 @@ body {
 .message-box {}
 
 input.message-box {
-    flex-basis: 77%;
     background: white;
     font-weight: 500;
+    flex-grow: 1;
 }
 
 .contact.selected {
@@ -334,7 +334,7 @@ img.image {
 
 .message-time {
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.09);
+    background: rgba(0, 0, 0, 0.28);
     padding: 6px 19px 6px 19px;
     color: white;
     border-radius: 30px;
@@ -408,9 +408,7 @@ span.done.second {
     margin-bottom: 9px;
 }
 
-.ct-long-name.qouter {
-  color:#39a6e6;
-}
+
 
 .graph-time {
     margin-top: 6px;
@@ -454,4 +452,23 @@ span.done.second.ct {margin-right: 6px;}
 
 .message.left.media {
     max-width: 53%;
+}
+
+.qouter {
+    color: #39a6e6;
+}
+
+span.smile {
+    width: 23px;
+    height: 23px;
+    margin-right: 8px;
+}
+
+.ct-last-mess {
+    display: flex;
+}
+
+span.smile.calm {
+    background: url(images/smile.png);
+    background-size: 23px;
 }
