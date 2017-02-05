@@ -40,15 +40,19 @@
     flex-basis: 838px;
     height: 100%;
     border-top: solid 1px #eaeaea;
+    min-width: 383px;
 }
 
 .nav-icon {
-    height: 28px;
-    width: 28px;
+    height: 23px;
+    width: 23px;
     background-color: #9d9d9d;
     margin: 0px 25px 0px 25px;
     mask-size: cover;
     -webkit-mask-size: cover;
+    display: flex;
+    align-content: center;
+    cursor: pointer;
 }
 
 .content {
@@ -62,7 +66,7 @@
     flex-direction: row;
     /* justify-content: space-between; */
     flex-wrap: nowrap;
-    height: 90px;
+    height: 89px;
     align-items: center;
     background: #ffffff;
     color: black;
@@ -75,6 +79,7 @@
     height: 62px;
     flex-basis: 325px;
     margin-right: 15px;
+    font-size: 18px;
 }
 
 .row {
@@ -98,7 +103,7 @@
 
 .nav-bar.right {
     justify-content: space-between;
-    min-width: 483px;
+    min-width: 551px;
 }
 
 .nav-bar-holder {
@@ -113,6 +118,7 @@
 .contacts {
     flex-basis: 440px;
     border-bottom: solid 1px #eaeaea;
+    min-width: 383px;
 }
 
 .dialog {
@@ -130,6 +136,7 @@
     overflow: overlay;
     border-right: solid 1px #eaeaea;
     border-left: solid 1px #eaeaea;
+    font-size: 17px;
 }
 
 input[type="text"] {
@@ -150,6 +157,7 @@ input[type="text"] {
 
 body {
     font-family: HelveticaNeueCyr;
+    margin: 0;
 }
 
 .nav-icon.menu {
@@ -160,13 +168,12 @@ body {
 .nav-icon.search {
     mask: url(images/search.svg);
     -webkit-mask: url(images/search.svg);
+    margin-right: 5px;
 }
 
 .nav-icon.more {
     mask: url(images/more.svg);
     -webkit-mask: url(images/more.svg);
-    height: 23px;
-    width: 23px;
 }
 
 .ct-long-name {
@@ -208,6 +215,7 @@ body {
     mask-size: cover;
     -webkit-mask-size: cover;
     background-color: #9d9d9d;
+    cursor: pointer;
 }
 
 .input-box {
@@ -327,7 +335,7 @@ img.image {
 .message-time {
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.09);
-    padding: 10px 19px 10px 19px;
+    padding: 6px 19px 6px 19px;
     color: white;
     border-radius: 30px;
     margin-bottom: 11px;
@@ -342,6 +350,7 @@ img.image {
     align-items: center;
     min-width: 65px;
     margin-right: 23px;
+    cursor: pointer;
 }
 
 img.play-img {
@@ -393,7 +402,7 @@ span.done.second {
 }
 
 .quote {
-    border-left: solid 2px #39a6e6;
+    border-left: solid 3px #39a6e6;
     padding: 5px;
     padding-left: 10px;
     margin-bottom: 9px;
