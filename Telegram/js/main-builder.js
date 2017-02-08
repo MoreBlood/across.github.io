@@ -86,11 +86,30 @@ $(document).ready(function () {
 
   $("#process").click(function (argument) {
     var array = new Array();
-    array = ($("#data").val().split($("#razd").val()));
+    var string = $("#data").val().replace(/\n/g, $("#razd").val() + "line");
+    //console.log(string);
+
+    array = string.split($("#razd").val());
+    array[0] = "line" +  array[0];
+    array.pop();
+
+    //console.log(JSON.stringify(array));
+    var json_obj = {};
+
+
     for(var key = 0; key < array.length; key++){
- 
-        console.log(array[key]);
+      if (array[key].substring(0,4) == "line") 
+      {
+        current_stop = array[key].substring(4,array[key].length);
+        json_obj[current_stop] = new Array();
       }
+      else      json_obj[current_stop].push(array[key])
+      //else console.log('"' + array[key] + '", ');
+    }
+    console.log(json_obj);
+    console.log(JSON.stringify(json_obj));
+       
+
     
     
 })
