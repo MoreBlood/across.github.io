@@ -376,7 +376,7 @@ switch ($data->type) {
                 $responce_for_message = date("G:i:s", $t);
                 break;
             case 'привет':
-                $responce_for_message = "Привет пидор!";
+                $responce_for_message = "Привет, {$user_name}!";
                 break;
         }
 
@@ -414,7 +414,7 @@ switch ($data->type) {
 
         if($responce_for_message == "") $responce_for_message = "Даже не знаю, что ответить";
 
-        if ($data->object->attachments[0]->type == "sticker") $request_params['message'] = "Так ты стикеродаун, это еще хуже чем пидор!";
+        if ($data->object->attachments[0]->type == "sticker") $request_params['message'] = "Классный стикер, жаль я не умею их кидать :(";
 
         $get_params = http_build_query($request_params);
 

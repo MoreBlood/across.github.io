@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 	  <meta charset="windows-1251">
 	  <link href="css/main.css" rel="stylesheet">
@@ -8,11 +8,108 @@
 	
 </head>
 	<body>
-
+			<div class="app">
 				<div class="input-box">
-					<textarea class="message-box" type="text" name="message" id="data" placeholder="Data..."></textarea>
+				<div class="param">
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    Автобус
+					    <span class="caret"></span>
+					  </button>
+					  <ul id="bus" class="dropdown-menu long" aria-labelledby="dropdownMenu1">
+					    <li><a href="#">1</a></li>
+						<li><a href="#">1А</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">2А</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">7</a></li>
+						<li><a href="#">8</a></li>
+						<li><a href="#">9</a></li>
+						<li><a href="#">10</a></li>
+						<li><a href="#">11</a></li>
+						<li><a href="#">11А</a></li>
+						<li><a href="#">12</a></li>
+						<li><a href="#">12А</a></li>
+						<li><a href="#">13</a></li>
+						<li><a href="#">13А</a></li>
+						<li><a href="#">14</a></li>
+						<li><a href="#">15А</a></li>
+						<li><a href="#">15Б</a></li>
+						<li><a href="#">15В</a></li>
+						<li><a href="#">16</a></li>
+						<li><a href="#">17</a></li>
+						<li><a href="#">18</a></li>
+						<li><a href="#">19</a></li>
+						<li><a href="#">20</a></li>
+						<li><a href="#">21</a></li>
+						<li><a href="#">21А</a></li>
+						<li><a href="#">21Б</a></li>
+						<li><a href="#">22</a></li>
+						<li><a href="#">23</a></li>
+						<li><a href="#">23А</a></li>
+						<li><a href="#">23Б</a></li>
+						<li><a href="#">24</a></li>
+						<li><a href="#">24А</a></li>
+						<li><a href="#">25</a></li>
+						<li><a href="#">26</a></li>
+						<li><a href="#">27</a></li>
+						<li><a href="#">29</a></li>
+						<li><a href="#">30</a></li>
+						<li><a href="#">31</a></li>
+						<li><a href="#">32</a></li>
+						<li><a href="#">33</a></li>
+						<li><a href="#">34</a></li>
+						<li><a href="#">35</a></li>
+						<li><a href="#">36</a></li>
+						<li><a href="#">37</a></li>
+						<li><a href="#">37А</a></li>
+						<li><a href="#">38</a></li>
+						<li><a href="#">39</a></li>
+						<li><a href="#">39А</a></li>
+						<li><a href="#">39Б</a></li>
+						<li><a href="#">40</a></li>
+						<li><a href="#">41</a></li>
+						<li><a href="#">43</a></li>
+						<li><a href="#">44</a></li>
+						<li><a href="#">44А</a></li>
+						<li><a href="#">46</a></li>
+					  </ul>
+					</div>
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    Направление
+					    <span class="caret"></span>
+					  </button>
+					<ul id="route" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <li><a href="#">Юг</a></li>
+						<li><a href="#">Север</a></li>
+						<li><a href="#">Запад</a></li>
+						<li><a href="#">Восток</a></li>
+					  </ul>
+					</div>
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    День
+					    <span class="caret"></span>
+					  </button>
+					<ul id="day" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <li><a href="#">Рабочий</a></li>
+						<li><a href="#">Выходной</a></li>
+
+					  </ul>
+					</div>
+					
+					<input style="width: 100px" class="form-control"  id="razd" type="razd" name="" value="	">
 					<button class="btn btn-success" id="process">Convert</button>
-					<input class="form-control"  id="razd" type="razd" name="" value="	">
+					</div>
+
+					<textarea class="message-box" type="text" name="message" id="data" placeholder="Data..."></textarea>
+					
+					
+					</div>
+					<div class="output"></div>	
 					</div>
 					
 				
@@ -20,5 +117,7 @@
 			<script src="js/jquery.min.js"></script>
             <script src="js/respond.min.js"></script>
             <script src="js/navigation.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            
             <script src="js/main-builder.js"></script> 
 </html>

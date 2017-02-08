@@ -237,7 +237,7 @@ body {
     justify-content: space-around;
     border: solid 1px #eaeaea;
     min-height: 65px;
-    height: 400px;
+    /* height: 400px; */
     padding: 10px;
 }
 
@@ -555,3 +555,33 @@ button {
 
 .ct-long-name.selected {
     color: white;
+}
+
+.dropdown {
+    align-self: baseline;
+}
+
+ul.dropdown-menu {
+    /* height: 50vh; */
+    overflow: scroll;
+}
+
+ul.dropdown-menu.long {
+    height: 75vh;
+}
+
+.param {
+    display: flex;
+    margin-bottom: 14px;
+    align-self: flex-start;
+    width: 100%;
+    /* justify-content: space-around; */
+}
+
+.app {
+    display: flex;
+}
+
+.output {
+    padding: 10px;
+}
