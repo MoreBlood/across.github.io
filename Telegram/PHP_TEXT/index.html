@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+
+<title> <!--#echo var="HTTP_HOST" --> Welcome to TIGRIMIGRI Free Web Hosting</title> 
+
+<style type="text/css">
+
+html {
+	margin: 5px; padding: 0px; height: 100%;
+}
+body {
+	margin: 0px; padding: 0px; height: 100%;
+	font: 14px Verdana, Arial, Helvetica, sans-serif;
+        background-color: white; background-attachment: fixed;
+ 
+ 
+	
+}
+
+p {
+	margin-top: 0px; padding-top: 20px; padding-left: 0px; font-size:14px;
+}
+
+
+h2 {
+	margin-top: 0px; font-family: Verdana, Geneva, sans-serif; color: #999; font-size: 24px; font-weight: bold;
+}
+
+
+
+a {
+	color: #666; text-decoration: none; border-bottom-color: khaki; border-bottom-width: 3px; border-bottom-style: solid;
+}
+
+a:hover { 
+	color: #F60; text-decoration: none; border-bottom-color: #F00; border-bottom-width: 3px; border-bottom-style: solid;
+}
+
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 15px;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+#wrapper {
+	margin: 0px auto; width: 980px; position: relative;
+} 
+
+#header {
+	left: 25px;
+	top: 75px;
+	width: 400px;
+	height: 200px;
+	overflow: visible;
+	position: absolute;
+	z-index:701;
+}
+
+div.background {
+  background: url(img/front-content-pattern.png) repeat;
+  border: 2px solid Khaki;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+</style>
+
+</head>
+
+<body leftmargin="0">
+<table width="100%" height="100%" cellspacing="15" cellpadding="40">
+
+<DIV id="header">
+<img src="/img/tigri_migri_free_webhosting_logo_stamp.png" alt="Tigri Migri" width="338" height="166">
+</DIV>
+
+   <tr>
+    <th bgcolor="#CC3300" width="200" rowspan="2" scope="col">&nbsp;</th>
+    <th width="600" height="317" scope="col"><h2>Welcome to Tigrimigri.com!
+    </h2>
+      <div class="background">
+        <div class="transbox">
+        <p align="justify">This is a placeholder sample page of: <br>
+          <!--#echo var="HTTP_HOST" -->/index.html <br><br>
+         As you can see it is working :)
+          <br>
+          You can edit the index.html file in your public_html directory  &amp; upload all of your pages and data-scripts-CSS styles through FTP to your public_html directory  and/or install a  CMS like Wordpress / Joomla / Drupal  through our  Softaculous Installer.
+        
+
+<br>
+
+You can find Softacoulous after you logged into our Centos Web Panel.
+<br>
+        <b></p>
+        <p align="justify"><a href="https://freehost.tigrimigri.com:2031/index.php" target="_blank">Centos Web Panel</a><br />
+        <a href="http://tigrimigri.com/faq.html" target="_blank">Frequently Asked Questions</a></p>
+        </div>
+  </div>
+      <p>&nbsp;</p>    </th>
+    <th width="" rowspan="2" scope="col">&nbsp;</th>
+  </tr>
+  <tr>
+    <td><h4>&nbsp;</h4></td>
+  </tr>
+</table>
+<br>
+<!--#echo var="DATE_LOCAL" --> 
+</body>
+</html>
+
