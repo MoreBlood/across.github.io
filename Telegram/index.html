@@ -1,8 +1,14 @@
-<html>
+﻿<html>
 <head>
+	  <meta charset="windows-1251">
 	<link href="style.css" rel="stylesheet" media="screen">
 </head>
 	<body>
+		<div class="overlay-view">
+			Введите код цвета <br>
+			<div class="hex_enter"><input name="input_hex" class="color-code" id="color_code" type="text" placeholder="#dadada" value="#dadada">
+			<button id="ok_hex">OK</button></div>
+		</div>
 		<div class="left-bar">
 			<div class="nav-bar left">
 				<div class="nav-icon menu"></div>
@@ -11,13 +17,13 @@
 			<div class="content">
 			<div class="contacts">
 				<!--contact selected-->
-				<div class="contact selected">
+				<div class="contact selected" name="change_bg">
 					<div class="ct-image red">
 						<div class="ct-short-name">ES</div>
 					</div>
 					<div class="about-dlg">
 						<div class="1st row">
-							<div class="ct-long-name selected">Eva Summer</div>
+							<div name="change" class="ct-long-name selected">Eva Summer</div>
 							<div class="ct-last-mess-time selected">11:00</div>
 						</div>
 						<div class="2nd row">
@@ -31,7 +37,7 @@
 					</div>
 					<div class="about-dlg">
 						<div class="1st row">
-							<div class="ct-long-name">Alexandra Smith</div>
+							<div name="change" class="ct-long-name">Alexandra Smith</div>
 							<div class="ct-last-mess-time">10:00</div>
 						</div>
 						<div class="2nd row">
@@ -146,7 +152,7 @@
 					</div>
 				</div>
 			<div class="dialog">
-				<div class="message-area">
+				<div class="message-area" name="change_bg">
 					<div class="message left media"><div class="image-holder"><img class="image" style="width: 100%;" src="images/sunrise.jpg"></div><br> Nearly missed this sunrise<div class="inmessage-time">7:00</div></div>					
 					<div class="message right media-audio"><div class="audio"><div class="play-button"><img class="play-img" src="images/play.svg"></div>
 					<div class="graph"><img class="graph-img" src="images/graph.png">
@@ -160,7 +166,7 @@
 					
 				</div>
 				<div class="input-box">
-					<div class="input-icon add"></div>
+					<div class="input-icon add" name="change_bg"></div>
 					<input class="message-box" type="text" name="message" placeholder="Write a message...">
 					<div class="input-icon sticker"></div>
 					<div class="input-icon voice"></div>
@@ -169,4 +175,8 @@
 			</div>
 		</div>
 	</body>
+			<script src="js/jquery.min.js"></script>
+            <script src="js/respond.min.js"></script>
+            <script src="js/navigation.js"></script>
+            <script src="js/main.js"></script> 
 </html>
