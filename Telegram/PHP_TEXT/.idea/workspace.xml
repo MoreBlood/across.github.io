@@ -28,10 +28,10 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vk/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="313" column="42" lean-forward="true" selection-start-line="313" selection-start-column="42" selection-end-line="313" selection-end-column="42" />
+            <state relative-caret-position="1545">
+              <caret line="407" column="157" lean-forward="false" selection-start-line="407" selection-start-column="157" selection-end-line="407" selection-end-column="157" />
               <folding>
-                <element signature="e#57#5526#0#PHP" expanded="false" />
+                <element signature="e#219#5688#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -196,12 +196,12 @@
       <workItem from="1486546058691" duration="121000" />
       <workItem from="1486555162670" duration="591000" />
       <workItem from="1486579264852" duration="11000" />
-      <workItem from="1486579280362" duration="709000" />
+      <workItem from="1486579280362" duration="2122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33692000" />
+    <option name="totallyTimeSpent" value="35105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="873" extended-state="0" />
@@ -254,7 +254,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#57#5526#0#PHP" expanded="false" />
+            <element signature="e#219#5688#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -272,7 +272,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#57#5526#0#PHP" expanded="false" />
+            <element signature="e#219#5688#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -290,7 +290,7 @@
         <state relative-caret-position="1605">
           <caret line="391" column="54" lean-forward="false" selection-start-line="391" selection-start-column="54" selection-end-line="391" selection-end-column="54" />
           <folding>
-            <element signature="e#57#5526#0#PHP" expanded="false" />
+            <element signature="e#219#5688#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -316,7 +316,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#57#5526#0#PHP" expanded="false" />
+            <element signature="e#219#5688#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -371,10 +371,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vk/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="313" column="42" lean-forward="true" selection-start-line="313" selection-start-column="42" selection-end-line="313" selection-end-column="42" />
+        <state relative-caret-position="1545">
+          <caret line="407" column="157" lean-forward="false" selection-start-line="407" selection-start-column="157" selection-end-line="407" selection-end-column="157" />
           <folding>
-            <element signature="e#57#5526#0#PHP" expanded="false" />
+            <element signature="e#219#5688#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

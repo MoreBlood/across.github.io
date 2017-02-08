@@ -122,7 +122,7 @@ $(document).ready(function () {
     //console.log(json_obj);
     var json = JSON.stringify(json_obj);
     $(".output").html(bus + "." + route + "." + day + "<br>" + json);
-    download(bus + "." + route + "." + day + '.txt', json);
+    download(bus + "." + route + "." + day + '.json', json);
        
 
     

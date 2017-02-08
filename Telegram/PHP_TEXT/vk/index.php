@@ -1,5 +1,12 @@
 <?php
 
+
+function found_by_stop ($bus, $route, $stop){
+    $data = json_decode(file_get_contents('17.Север.Рабочий.json'));
+    return implode(", ", $data -> $stop);
+
+}
+
 if (!isset($_REQUEST)) {
     return;
 }
@@ -398,10 +405,10 @@ switch ($data->type) {
         if ($user_message == 'да' && substr_count($messages_history_bot[0], ',') != 0)$request_params['message']= "Что значит да?";
 
         //если пользователь написал номер остановки, сразу предлагаем транспорт
-        if (is_numeric($user_message)) $request_params['message'] = "Предлагаем транспорт для остановки " . $user_message . ". " . $stops[$user_message];
+        if (is_numeric($user_message)) $request_params['message'] = "Предлагаем транспорт для остановки " . $user_message . ". " . $stops[$user_message] . " - " . found_by_stop("17", "Север", $stops[$user_message]);
 
         //если есть одно точное совпадение введенной пользователем остановки
-        if ($found_fast = array_search(mb_strtolower($user_message), $stops_low)) $request_params['message'] = "Предлагаем транспорт для остановки " . $found_fast . ". " . $stops[$found_fast];
+        if ($found_fast = array_search(mb_strtolower($user_message), $stops_low)) $request_params['message'] = "Предлагаем транспорт для остановки " . $found_fast . ". " . $stops[$found_fast] . " - " . found_by_stop("17", "Север", $stops[$found_fast]);
 
         if ($user_message == 'кинь музыку'){
             $request_params['attachment'] = 'audio179667459_456239214';
@@ -411,6 +418,7 @@ switch ($data->type) {
             $request_params['attachment'] = 'photo-139467761_456239018';
             $request_params['message']= 'Наканецта мемыыыы';
         }
+
 
         if($responce_for_message == "") $responce_for_message = "Даже не знаю, что ответить";
 
