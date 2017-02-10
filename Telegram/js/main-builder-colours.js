@@ -206,7 +206,7 @@ $("#download").click(function (argument) {
   var theText = "";
     $('.exported_colour').each(function(){
         theText += $(this).children("span").text();
-        if($(this).children("span").children("input").length) theText += $(this).children("span").children("input").attr('value');
+        if($(this).children("span").children("input").length) theText += $(this).children("span").children("input").val();
         theText += ";" +'\n';
     });
     if (theText == "") return;
