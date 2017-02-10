@@ -185,7 +185,16 @@ $("#download").click(function (argument) {
         theText += $(this).text() + '\n';
     });
     if (theText == "") return;
-  download('colors.tdesktop-theme', theText);
+  /*download('colors.tdesktop-theme', theText);*/
+
+  var zip = new JSZip();
+  zip.file("colors.tdesktop-theme", theText);  
+  zip.file("background.jpg").name;
+  zip.generateAsync({type:"blob"})
+    .then(function(content) {
+    // see FileSaver.js
+    saveAs(content, "theme.tdesktop-theme");
+});
 });
 
 
