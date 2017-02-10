@@ -1,10 +1,54 @@
 <?php
+date_default_timezone_set("Europe/Minsk");
+$t = time();
 
+function isWeekend($date) {
+    return (date('N', strtotime($date)) >= 6);
+}
+
+function type_of_day_rus($date)
+{
+    if (isWeekend($date)) return "Выходной";
+    else return "Рабочий";
+}
 
 function found_by_stop ($bus, $route, $stop){
-    $data = json_decode(file_get_contents('17.Север.Рабочий.json'));
-    return implode(", ", $data -> $stop);
+    global $t;
+    $data = json_decode(file_get_contents('17.Север.' . type_of_day_rus($t) . '.json'));
+    return $data -> $stop;
 
+}
+
+function all_stops ($bus, $route){
+    global $t;
+    $data = json_decode(file_get_contents($bus . '.Север.' . type_of_day_rus($t) . '.json'), true);
+    return array_keys($data);
+
+}
+
+function get_route($bus){
+    global $t;
+    $data = json_decode(file_get_contents($bus . '.Север.' . type_of_day_rus($t) . '.json'), true);
+    return current(array_keys($data)) . " - " . end(array_keys($data));
+}
+
+function convert_time ($time){ //returns time in seconds
+
+    return strtotime("1970-01-01 $time UTC");
+}
+
+function closest_time($time_array, $requested_time){
+
+    $offset = 100000000;
+    $offset_return = "23:59";
+
+    foreach ($time_array as $key){
+        if (convert_time($key) - convert_time($requested_time) < $offset && convert_time($key) > convert_time($requested_time)){
+            $offset_return = $key;
+            $offset = convert_time($key) - convert_time($requested_time);
+        }
+    }
+    return $offset_return;
 }
 
 if (!isset($_REQUEST)) {
@@ -352,8 +396,7 @@ switch ($data->type) {
         //даешь остановку -- получаешь список автобусов, туда и обратно
         //либо пары номер + остановка, остановка + номер, номер + время + остановка, и т.д.
 
-        date_default_timezone_set("Europe/Minsk");
-        $t=time();
+
 
 
 
@@ -399,16 +442,19 @@ switch ($data->type) {
         if ($responce_for_message == "")$request_params['message']= 'Хз';
         //если в предыдущем сообщении бота только один ответ, проверям количество точек после номера остановки
         if ($user_message == 'да' && substr_count($messages_history_bot[0], ',') == 0 && substr_count($messages_history_bot[0], '.') == 1)
-            $request_params['message']= "Предлагаем транспорт для остановки {$messages_history_bot[0]}.";
+            $request_params['message']= get_route("17") .  " на остановке " . explode('.', $messages_history_bot[0])[0] . ". " . $stops[explode('.', $messages_history_bot[0])[0]] . " будет в " . closest_time(found_by_stop("17", "Север", $stops[explode('.', $messages_history_bot[0])[0]]), date("G:i", $t));
 
         //для условия, когда остановок много, а ответ да, т.е. точек после номеров много
         if ($user_message == 'да' && substr_count($messages_history_bot[0], ',') != 0)$request_params['message']= "Что значит да?";
 
+        //all stops for bus
+        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(explode(' ', $user_message, 2)[1],"1"));
+
         //если пользователь написал номер остановки, сразу предлагаем транспорт
-        if (is_numeric($user_message)) $request_params['message'] = "Предлагаем транспорт для остановки " . $user_message . ". " . $stops[$user_message] . " - " . found_by_stop("17", "Север", $stops[$user_message]);
+        if (is_numeric($user_message)) $request_params['message'] =  get_route("17") .  " на остановке " . $user_message . ". " . $stops[$user_message] . " будет в " . closest_time(found_by_stop("17", "Север", $stops[$user_message]), date("G:i", $t));
 
         //если есть одно точное совпадение введенной пользователем остановки
-        if ($found_fast = array_search(mb_strtolower($user_message), $stops_low)) $request_params['message'] = "Предлагаем транспорт для остановки " . $found_fast . ". " . $stops[$found_fast] . " - " . found_by_stop("17", "Север", $stops[$found_fast]);
+        if ($found_fast = array_search(mb_strtolower($user_message), $stops_low)) $request_params['message'] = get_route("17") .  " на остановке " . $found_fast . ". " . $stops[$found_fast] . " будет в " . closest_time(found_by_stop("17", "Север", $stops[$found_fast]), date("G:i", $t));
 
         if ($user_message == 'кинь музыку'){
             $request_params['attachment'] = 'audio179667459_456239214';

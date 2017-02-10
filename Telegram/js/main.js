@@ -91,6 +91,12 @@ $(document).ready(function () {
                 left: event.pageX,
                 display: 'flex'
             });
+    if (event.pageY + $(".overlay-view").height() > $(window).height()) $(".overlay-view").css({
+              top: $(window).height() -  $(".overlay-view").height()*1.5
+            });
+      if (event.pageX + $(".overlay-view").width() > $(window).width()) $(".overlay-view").css({
+              left: $(window).width() -  $(".overlay-view").width()*1.5
+            });
   }
 
   function change_color(element, type) {
