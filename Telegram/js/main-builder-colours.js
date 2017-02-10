@@ -1,5 +1,12 @@
 var preventSpam = 0;
 
+function inlinesearch(object, key){
+  var color = key;
+  while (color[0] != "#"){
+    color = object[color];
+  }
+  return color;
+}
 // возвращает cookie с именем name, если есть, если нет, то undefined
 function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
@@ -151,7 +158,11 @@ $(document).ready(function () {
     }
     
     for(var key in json_obj){
-      if (json_obj[key][0] != "#"  && $("#cb2").prop( "checked" ) == true) $("#output").append('<div ' + 'style="background:' + json_obj[json_obj[key]]  +   '" class="exported_colour"><span style="background: white">' + key + ": <b>" + json_obj[key] + ';</b></span></div>')
+      if (json_obj[key][0] != "#"  && $("#cb2").prop( "checked" ) == true && inlinesearch(json_obj, json_obj[key]).length < 8) $("#output").append('<div ' + 'style="background:' + inlinesearch(json_obj, json_obj[key])  +   '" class="exported_colour"><span style="background: white">' + key + ": <b>" + json_obj[key] + ';</b></span></div>')
+    }
+
+    for(var key in json_obj){
+      if (json_obj[key][0] != "#"  && $("#cb3").prop( "checked" ) == true && inlinesearch(json_obj, json_obj[key]).length > 7) $("#output").append('<div ' + 'style="background:' +  hexToRgbA(inlinesearch(json_obj, json_obj[key]).substring(0,7)) +  parseInt(inlinesearch(json_obj, json_obj[key]).substring(7,9), 16) / 256 + ')" class="exported_colour"><span style="background: white">' + key + ": <b>" + json_obj[key] + ';</b></span></div>')
     }
 
     for(var key in json_obj){
