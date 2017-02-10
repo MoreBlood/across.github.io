@@ -623,3 +623,11 @@ span {
     /* color: white; */
     /* border-radius: 1px; */
 }
+
+input[type="text"] {}
+
+input.hex {
+    width: 75px;
+    border: 0px solid rgba(0, 0, 0, 0.16);
+    height: 16px;
+}
