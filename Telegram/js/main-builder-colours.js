@@ -7,6 +7,29 @@ function inlinesearch(object, key){
   }
   return color;
 }
+
+function getBase64Image(img) {  
+    // создаем канвас элемент  
+    var canvas = document.createElement("canvas");  
+    canvas.width = img.width;  
+    canvas.height = img.height;  
+  
+    // Копируем изображение на канвас  
+    var ctx = canvas.getContext("2d");  
+    ctx.drawImage(img, 0, 0);  
+  
+    // Получаем data-URL отформатированную строку  
+    // Firefox поддерживает PNG и JPEG.   
+    var dataURL = canvas.toDataURL("image/png");  
+  
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");  
+}  
+ 
+
+function getBase64ImageById(id){  
+   return getBase64Image(document.getElementById(id));  
+} 
+
 // возвращает cookie с именем name, если есть, если нет, то undefined
 function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
@@ -189,7 +212,7 @@ $("#download").click(function (argument) {
 
   var zip = new JSZip();
   zip.file("colors.tdesktop-theme", theText);  
-  zip.file("background.jpg").name;
+  zip.file("background.jpg", getBase64ImageById("background"), {base64: true});
   zip.generateAsync({type:"blob"})
     .then(function(content) {
     // see FileSaver.js
