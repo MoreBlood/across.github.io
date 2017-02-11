@@ -588,6 +588,7 @@ ul.dropdown-menu.long {
     /* width: 500px; */
     overflow: hidden;
     word-break: break-all;
+    height: 100%;
 }
 
 body {
