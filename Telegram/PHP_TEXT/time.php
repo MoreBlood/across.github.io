@@ -1,6 +1,12 @@
 <?php
 date_default_timezone_set("Europe/Minsk");
 $t=time();
+function Say()
+{
+    global $kek;
+    echo $kek;
+}
+
 
 function convert_time ($time){
 
@@ -17,22 +23,9 @@ function type_of_message($mesage){
     if (count($words) == 3) return "three";// точное задание параметров о:а:в и вариации
 
 }
+$kek = "kek2";
 
-function closest_time($time_array, $requested_time){
-
-    $offset = 100000000;
-    $offset_return = "23:59";
-
-    foreach ($time_array as $key){
-        if (convert_time($key) - convert_time($requested_time) < $offset && convert_time($key) > convert_time($requested_time)){
-            $offset_return = $key;
-            $offset = convert_time($key) - convert_time($requested_time);
-        }
-
-    }
-    return $offset_return;
-}
-
+echo Say();
 
 
 
