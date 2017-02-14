@@ -1,10 +1,14 @@
 <?php
 date_default_timezone_set("Europe/Minsk");
 $t=time();
-function Say()
+
+function type_of_day_rus($shift)
 {
-    global $kek;
-    echo $kek;
+    global $t;
+    echo date("G:i", $t);
+    if ((date('N', $t - strtotime('+' .$shift . 'day', strtotime($t))) >= 6)) return "Выходной";
+
+    else return "Рабочий";
 }
 
 
@@ -23,10 +27,8 @@ function type_of_message($mesage){
     if (count($words) == 3) return "three";// точное задание параметров о:а:в и вариации
 
 }
-$kek = "kek2";
 
-echo Say();
-
+echo convert_time("00:00");
 
 
 ?>

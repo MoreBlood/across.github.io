@@ -631,3 +631,9 @@ input.hex {
     border: 0px solid rgba(0, 0, 0, 0.16);
     height: 16px;
 }
+
+input.hex_a {
+    width: 20px;
+    border: 0px solid rgba(0, 0, 0, 0.16);
+    height: 16px;
+}
