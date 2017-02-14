@@ -5,6 +5,21 @@ function inlinesearch(object, key) {
     }
     return color;
 }
+function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
+}
+
 function hexToRgbA(hex) {
     var c;
     if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
@@ -162,6 +177,21 @@ $(document).ready(function () {
                 // see FileSaver.js
                 saveAs(content, "theme.tdesktop-theme");
             });
+    })
+    $("#download_theme").click(function (argument) {
+        var theText = "";
+        $('.exported_colour').each(function () {
+            theText += $(this).children("span").text();
+            if ($(this).children("span").children("input").length) {
+              theText += $(this).children("span").children().val();
+              var hex_a = "";
+              if ((hex_a =  $(this).children("span").children("input").next().val()) != undefined) theText+=hex_a;
+            } 
+            
+            theText += ";" + '\n';
+        });
+        if (theText == "") return;
+        download('colors.tdesktop-theme', theText);
     })
 });
 
