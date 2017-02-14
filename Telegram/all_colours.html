@@ -27,24 +27,33 @@
 					<input id="cb2" type="checkbox" checked="checked" aria-label="...">inherited
 					<input id="cb3" type="checkbox" checked="checked" aria-label="...">with alpha&nbsp
 					<button class="btn btn-success" id="process">Convert</button>&nbsp
-					<button class="btn btn-warning" id="download">Download</button>
+					<button class="btn btn-warning" id="download">Download</button>&nbsp bg-color&nbsp
+					<input style="width: 100px" class="form-control jscolor_a {hash:true}"  id="bgcolor" type="razd" name="" value="#f5fcff">
+					<canvas id="c" width="100"></canvas>
 					</div>
 
 					<textarea class="message-box" type="text" name="message" id="data" placeholder="Data..."></textarea>
 					
 					
 					</div>
-					<div id="output" class="output"></div>	
+					<div id="output" class="output">
+						<div id="main"></div>
+						<div id="inherited"></div>
+						<div id="alpha"></div>
+					</div>
 					</div>
 					<img id="background" src="background.jpg" style="display: none">
 					
 				
 	</body>
+
 			<script src="js/jquery.min.js"></script>
+			<script src="js/jscolor.js"></script>
             <script src="js/respond.min.js"></script>
             <script src="js/navigation.js"></script>
             <script src="js/bootstrap.min.js"></script>
             <script src="js/FileSaver.js"></script>
             <script src="js/jszip.js"></script>
-            <script src="js/main-builder-colours.js"></script> 
+            <script src="js/main-builder-colours.js"></script>
+
 </html>

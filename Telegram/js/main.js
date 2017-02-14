@@ -61,7 +61,7 @@ function SaveCookies(lang) { // заносим cookie в память (пока 
 
 
 $(document).ready(function () {
-  var element_to_change, type = 0;
+  /*var element_to_change, type = 0;
   $("*").on("click", function (event) {
     if ($(event.target).attr('name') != "change" && $(event.target).attr('name') != "input_hex" && $(event.target).attr('name') != "change_bg")
       $(".overlay-view").css({
@@ -105,7 +105,7 @@ $(document).ready(function () {
     return this.tagName;
   })
   .get()
-  .join( ", " );*/
+  .join( ", " );
   //alert(tag);
 
     switch (type){
@@ -122,7 +122,7 @@ $(document).ready(function () {
       break;
     }
 
-  }
+  }*/
 
         //alert((e.pageX - posX) + ' , ' + (e.pageY - posY));
     //alert($(this).attr('class'));
