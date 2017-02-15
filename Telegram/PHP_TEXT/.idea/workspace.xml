@@ -21,16 +21,23 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="175" column="11" lean-forward="true" selection-start-line="175" selection-start-column="11" selection-end-line="175" selection-end-column="11" />
+            <state relative-caret-position="279">
+              <caret line="276" column="70" lean-forward="true" selection-start-line="276" selection-start-column="70" selection-end-line="276" selection-end-column="70" />
               <folding>
+                <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
                 <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
                 <element signature="n#SendMessage#0;n#!!top" expanded="false" />
                 <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
                 <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+                <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
                 <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+                <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+                <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+                <element signature="n#all_stops#0;n#!!top" expanded="false" />
+                <element signature="n#get_route#0;n#!!top" expanded="false" />
                 <element signature="n#convert_time#0;n#!!top" expanded="false" />
                 <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+                <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -221,24 +228,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_TEXT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP_TEXT" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bus" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,17 +343,19 @@
       <workItem from="1486974099025" duration="21539000" />
       <workItem from="1487077455012" duration="233000" />
       <workItem from="1487097671245" duration="1419000" />
+      <workItem from="1487111043370" duration="30000" />
+      <workItem from="1487147756453" duration="2304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65600000" />
+    <option name="totallyTimeSpent" value="67934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23809524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24420024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -396,18 +391,102 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+          <folding>
+            <marker date="1487070059000" expanded="true" signature="223:248" ph="DROP TABLE I... " />
+            <marker date="1487070059000" expanded="true" signature="275:300" ph="CREATE TABLE... test" />
+            <marker date="1487070059000" expanded="true" signature="327:368" ph="INSERT INTO test... " />
+            <marker date="1487070059000" expanded="true" signature="483:518" ph="SELECT id FR... test" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bus/1.Обратно.Выходной.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bus/3Т.Обратно.Рабочий.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bus/3Т.Туда.Рабочий.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/convertcsv.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/time.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/etc/php/7.1/conf.d/ext-xdebug.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -494,13 +573,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,13 +627,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -557,13 +650,20 @@
         <state relative-caret-position="2685">
           <caret line="463" column="15" lean-forward="false" selection-start-line="463" selection-start-column="15" selection-end-line="463" selection-end-column="15" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,13 +673,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -589,13 +696,20 @@
         <state relative-caret-position="2685">
           <caret line="463" column="15" lean-forward="false" selection-start-line="463" selection-start-column="15" selection-end-line="463" selection-end-column="15" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -613,13 +727,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -629,13 +750,20 @@
         <state relative-caret-position="6945">
           <caret line="463" column="15" lean-forward="false" selection-start-line="463" selection-start-column="15" selection-end-line="463" selection-end-column="15" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,13 +773,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -661,13 +796,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -677,13 +819,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,13 +842,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,13 +865,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -740,13 +903,20 @@
         <state relative-caret-position="305">
           <caret line="160" column="1" lean-forward="true" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,16 +931,23 @@
     <entry file="file://$PROJECT_DIR$/vk/index.php" />
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="175" column="11" lean-forward="true" selection-start-line="175" selection-start-column="11" selection-end-line="175" selection-end-column="11" />
+        <state relative-caret-position="279">
+          <caret line="276" column="70" lean-forward="true" selection-start-line="276" selection-start-column="70" selection-end-line="276" selection-end-column="70" />
           <folding>
+            <element signature="n#GetUpperStopName#0;n#!!top" expanded="false" />
             <element signature="n#answer_for_bus_stop#0;n#!!top" expanded="false" />
             <element signature="n#SendMessage#0;n#!!top" expanded="false" />
             <element signature="n#array_change_key_case_unicode#0;n#!!top" expanded="false" />
             <element signature="n#try_to_find_stop#0;n#!!top" expanded="false" />
+            <element signature="n#type_of_day_rus_now#0;n#!!top" expanded="false" />
             <element signature="n#type_of_day_rus#0;n#!!top" expanded="false" />
+            <element signature="n#found_by_stop_by_date#0;n#!!top" expanded="false" />
+            <element signature="n#check_one_stop#0;n#!!top" expanded="false" />
+            <element signature="n#all_stops#0;n#!!top" expanded="false" />
+            <element signature="n#get_route#0;n#!!top" expanded="false" />
             <element signature="n#convert_time#0;n#!!top" expanded="false" />
             <element signature="n#closest_time_new#0;n#!!top" expanded="false" />
+            <element signature="n#GetLastMessages#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

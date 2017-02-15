@@ -151,6 +151,7 @@ function closest_time_new($bus, $route, $stop, $requested_time, $type)
     $time_array = array();
     while ($offset == INF && $counter < 7) {
 
+        if ($bus == "33" && ((date('N', $t) + $counter) % 7 == 0)) $counter++; //придумать фикс для 33
         if (!$time_array = found_by_stop_by_date($bus, $route, $stop, $counter)) return 0;
         foreach ($time_array as $key) {
             if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= convert_time($requested_time)) {
@@ -161,7 +162,6 @@ function closest_time_new($bus, $route, $stop, $requested_time, $type)
         }
         if ($offset !== INF) break;
         $counter++;
-        //if($bus = "33" && ((date('N', $t) + $counter) == 7)) $counter++; //придумать фикс для 33
         $requested_time = "00:00";
     }
 
@@ -170,6 +170,37 @@ function closest_time_new($bus, $route, $stop, $requested_time, $type)
     $shift_mes = "";
     if ($counter != 0) $shift_mes = $shift_array[$counter];
     return $offset_return . $shift_mes;
+}
+
+function GetLastMessages($author, $count)
+{
+
+    global $user_id, $token;
+
+    $request_mess = array(
+        'count' => $count * 2,
+        'user_id' => $user_id,
+        'access_token' => $token,
+        'v' => '5.62'
+    );
+    $get_mess = http_build_query($request_mess);
+    $prev_messages = file_get_contents('https://api.vk.com/method/messages.getHistory?' . $get_mess);
+
+    if ($prev_messages == FALSE) return 0;
+    $prev_messages = json_decode($prev_messages);
+
+    $messages_history = array();
+    $messages_history_bot = array();
+
+    foreach ($prev_messages->response->items as $key => $value) {
+        if ($value->from_id == $user_id) array_push($messages_history, $value->body);
+        else array_push($messages_history_bot, $value->body);
+    }
+    unset($value);
+
+    if ($author == $user_id) return $messages_history;
+    else return $messages_history_bot;
+
 }
 
 if (!isset($_REQUEST)) {
@@ -201,30 +232,6 @@ switch ($data->type) {
         $user_message = mb_strtolower($data->object->body);
         $response_for_message = "";
 
-        //работа с предыдущими сообщениями
-        $request_mess = array(
-            'count' => '6',
-            'user_id' => $user_id,
-            'access_token' => $token,
-            'v' => '5.62'
-        );
-        $get_mess = http_build_query($request_mess);
-        $prev_messages = json_decode(file_get_contents('https://api.vk.com/method/messages.getHistory?' . $get_mess));
-
-        $messages_history = array();
-        $messages_history_bot = array();
-
-        foreach ($prev_messages->response->items as $key => $value) {
-            if ($value->from_id == $user_id) array_push($messages_history, $value->body);
-            else array_push($messages_history_bot, $value->body);
-        }
-        unset($value);
-
-        $comma_separated = implode(",", $messages_history); // ненужное  и снизу тоже
-        //*/
-        $last_message = $comma_separated;
-
-
         $found_res = array_filter($stops_low, function ($el) use ($user_message) {
             return (mb_strpos($el, $user_message) !== false);//удаляем все что не подходит если просто ввод остановки
         });
@@ -237,13 +244,13 @@ switch ($data->type) {
 
 //С помощью messages.send и токена сообщества отправляем ответное сообщение
         $request_params = array(
-            'message' => " {$response_for_message}",
+            'message' => "{$response_for_message}",
 
             'user_id' => $user_id,
             'access_token' => $token,
             'v' => '5.62'
         );
-        if ($response_for_message == "") $request_params['message'] = "Даже не знаю, что ответить. \nЕсли нужна помощь напиши: помощь";
+
         if ($user_message == 'кинь музыку') {
             $request_params['attachment'] = 'audio179667459_456239214';
             $request_params['message'] = 'Держи!';
@@ -253,7 +260,6 @@ switch ($data->type) {
             $request_params['attachment'] = 'photo-139467761' . $memes[array_rand($memes)];
             $request_params['message'] = 'Мемыыыы, наканецтааааа';
         }
-
         if ($user_message == 'привет') $request_params['message'] = "Привет, {$user_name}!";
         if ($user_message == 'спасибо' || $user_message == 'спс') $request_params['message'] = "Пожалуйста, {$user_name} 😌";
         if ($user_message == 'как дела' || $user_message == 'как сам' || $user_message == 'как дела?' || $user_message == 'как сам?') $request_params['message'] = "Все отлично, а ты как, {$user_name}?";
@@ -262,21 +268,24 @@ switch ($data->type) {
         if ($user_message == 'помощь') $request_params['message'] = "Что я умею: \n - Поиск с текущим временем по BUS_NUM STOP_NAME \n - Поиск всех остановок ОСТАНОВКИ BUS_NUM \n - Расписание на остановке BUS_NUM STOP_NAME РАСПИСАНИЕ \n- Остановки необязательно дописывать, если части хватает, то выведется ответ \n Примеры: \n остановки 17\n 6 цум\n 5 стадион бре расписание\n Регистр не важен";
         if ($user_message == 'ты пидор') $request_params['message'] = "Только пидора могли назвать таким именем -  {$user_name}. ";
         if ($user_message == 'кто тебя сделал') $request_params['message'] = "Authors: \nvk.com/googlebox - code, idea\nvk.com/evgen_vagabund  - database, debug ";
-        if ($user_message == 'да' && substr_count($messages_history_bot[0], ',') != 0) $request_params['message'] = "Что значит да?";
-
-
-        if ((count($current = explode(' ', $user_message)) >= 2) && $current[0] != 'остановки' && ($current[0] != 'кинь') && ($current[0] != 'ты') && ($current[0] != 'как') && $user_message != 'кто тебя сделал' && $user_message != 'ты пидор') {
+        //if ($user_message == 'да' && substr_count($messages_history_bot[0], ',') != 0) $request_params['message'] = "Что значит да?";
+        if ($data->object->attachments[0]->type == "sticker") {
+            $request_params['message'] = "Классный стикер, жаль я не умею их кидать :(";
+            //$request_params['sticker_id'] = "12";
+        }
+        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(explode(' ', $user_message, 2)[1]), "1"));
+        if ((count($current = explode(' ', $user_message)) >= 2) && $request_params['message'] == "") {
             if (get_route(mb_strtoupper($current[0]), "Туда")) {
                 //дописать проверку пар, а еще разобраться с маршрутами, что ездят только в субботу, кавычки
                 $normal_stop = "";
                 $rasp_checker = "";
+                $current_bus = mb_strtoupper($current[0]);
                 if (end($current) == "расписание")
                     $rasp_checker = array_pop($current);
-                if ($normal_stop = try_to_find_stop(mb_strtolower(implode(" ", array_slice($current, 1))), mb_strtoupper($current[0]))) $normal_stop = GetUpperStopName(mb_strtoupper($current[0]), $normal_stop);
-                if (check_one_stop(mb_strtoupper($current[0]), "Туда", $normal_stop) && $normal_stop != "") {
+                if ($normal_stop = try_to_find_stop(mb_strtolower(implode(" ", array_slice($current, 1))), $current_bus)) $normal_stop = GetUpperStopName($current_bus, $normal_stop);
+                if (check_one_stop($current_bus, "Туда", $normal_stop) && $normal_stop != "") {
                     $request_params['message'] = "";
                     $rasp = 0;
-                    $current_bus = mb_strtoupper($current[0]);
                     $current_date = date("G:i", $t);
 
                     if ($rasp_checker == "расписание") $rasp = 1; //проверка на одно направление, чиститм чтобы мусора не было, ибо добавляем в строку, а не присваеваем
@@ -287,13 +296,8 @@ switch ($data->type) {
                 }
             }
         }
-        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(explode(' ', $user_message, 2)[1]), "1"));
 
-        if ($data->object->attachments[0]->type == "sticker") {
-            $request_params['message'] = "Классный стикер, жаль я не умею их кидать :(";
-            //$request_params['sticker_id'] = "12";
-        }
-
+        if ($request_params['message'] == "") $request_params['message'] = "Если нужна помощь напиши: помощь";
 
         file_get_contents('https://api.vk.com/method/messages.send?' . http_build_query($request_params));
 
