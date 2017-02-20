@@ -220,7 +220,7 @@ function all_stops($bus)
 
 function all_stops_by_route($bus, $route, $day)
 {
-    $data= file_get_contents('bus/' . $bus . '.' . $route . '.' . $day . '.json');
+    $data= @file_get_contents('bus/' . $bus . '.' . $route . '.' . $day . '.json');
     if ($data !== FALSE) return array_keys(json_decode($data, true));
     else return array("Нет такого транспорта");
 
@@ -267,13 +267,13 @@ function closest_time_new($bus, $route, $stop, $requested_time, $type, $shift)
 
         if ($bus == "33" && ((date('N', $t) + $counter) % 7 == 0)) $counter++; //придумать фикс для 33
         if ($time_array = found_by_stop_by_date($bus, $route, $stop, $counter))
-        foreach ($time_array as $key) {
-            if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= (convert_time($requested_time) - $error * 60)  ) {
-                $offset_return = $key;
-                $offset = convert_time($key) - convert_time($requested_time);
-                break;
+            foreach ($time_array as $key) {
+                if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= (convert_time($requested_time) - $error * 60)  ) {
+                    $offset_return = $key;
+                    $offset = convert_time($key) - convert_time($requested_time);
+                    break;
+                }
             }
-        }
         if ($offset !== INF) break;
         $counter++;
         if ($requested_time == date("G:i", $t)) $requested_time = "00:00"; // так себе фикс
@@ -413,7 +413,7 @@ switch (@$data->type) {
             $request_params['message'] = "Классный стикер, жаль я не умею их кидать :(";
             //$request_params['sticker_id'] = "12";
         }
-            if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(RemoveKeyWord("остановки", $user_message))));
+        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(RemoveKeyWord("остановки", $user_message))));
         if (strpos($user_message, 'транспорт') !== false){
 
             $request_params['message'] = answer_for_bus_stop(try_to_find_from_all(RemoveKeyWord("транспорт", $user_message)),"Туда", type_of_day_rus_now());
@@ -433,4 +433,3 @@ switch (@$data->type) {
 
         break;
 }
-

@@ -17,6 +17,7 @@ function ConvertToASCII ($str){
 
 
 
+
 echo answer_for_bus_stop(try_to_find_from_all(RemoveKeyWord("транспорт", "цум транспорт")),"Туда", type_of_day_rus_now());
 
 
