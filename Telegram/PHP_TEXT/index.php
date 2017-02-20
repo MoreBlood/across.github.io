@@ -1,22 +1,10 @@
 <?php
 include 'api.php';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 include 'tr.php';
-=======
->>>>>>> origin/master
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
 
 date_default_timezone_set("Europe/Minsk");
 $t = time();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 function SortRightWay($message_ex){
     $bus_array = array_map('mb_strtolower', array(1,"2","3","5","6","7","8","9","10","11","12","13","14","16","17","18","19","20","21","22","23","24","25","26","27","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","46","11А","12А","13А","15А","15Б","15В","1А","1Т","21А","21Б","23А","23Б","24А","2А","2Т","37А","39А","39Б","3Т","44А","4Т","5Т","6Т","7Т","8Т"));
 
@@ -86,21 +74,6 @@ function deleteSpace($str){
 function GetUpperStopName($bus, $stop)
 {
     $all_stops_for_bus = all_stops($bus);
-=======
-function GetUpperStopName($bus, $stop)
-{
-    $all_stops_for_bus = all_stops($bus, "");
->>>>>>> origin/master
-=======
-function GetUpperStopName($bus, $stop)
-{
-    $all_stops_for_bus = all_stops($bus, "");
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-function GetUpperStopName($bus, $stop)
-{
-    $all_stops_for_bus = all_stops($bus, "");
->>>>>>> parent of 301a11d... Big update and son fixes
     //SendMessage("зашли", false);
     foreach ($all_stops_for_bus as $key) {
         if (mb_strtolower($key) == $stop) {
@@ -111,9 +84,6 @@ function GetUpperStopName($bus, $stop)
     return 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 function answer_for_bus_stop($stop, $route, $day)
 {
     if ($stop === 0) return "Нет такой остановки";
@@ -142,18 +112,6 @@ function CmpWithOffset($first, $second, $type, $offset){
         if (abs($first - $second) >= $offset) return 1;
         else return 0;
     }
-=======
-function answer_for_bus_stop()
-{
->>>>>>> origin/master
-=======
-function answer_for_bus_stop()
-{
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-function answer_for_bus_stop()
-{
->>>>>>> parent of 301a11d... Big update and son fixes
 
 }
 
@@ -184,19 +142,7 @@ function array_change_key_case_unicode($arr, $c = CASE_LOWER)
 function try_to_find_stop($stop, $bus)
 {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $stops_low = array_map('mb_strtolower', all_stops($bus));
-=======
-    $stops_low = array_map('mb_strtolower', all_stops($bus, ""));
->>>>>>> origin/master
-=======
-    $stops_low = array_map('mb_strtolower', all_stops($bus, ""));
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-    $stops_low = array_map('mb_strtolower', all_stops($bus, ""));
->>>>>>> parent of 301a11d... Big update and son fixes
 
     $found_res = array_filter($stops_low, function ($el) use ($stop) {
         return (mb_strpos($el, $stop) !== false);//удаляем все что не подходит
@@ -226,24 +172,9 @@ function type_of_day_rus($shift)
 function found_by_stop_by_date($bus, $route, $stop, $shift)
 {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $data = @file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus($shift) . '.json');
     if ($data === FALSE) return 0;
     if (json_decode($data, true)[$stop] == NULL) return 0;
-=======
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus($shift) . '.json');
-    if (array_filter(json_decode($data, true)[$stop]) == NULL) return 0;
->>>>>>> origin/master
-=======
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus($shift) . '.json');
-    if (array_filter(json_decode($data, true)[$stop]) == NULL) return 0;
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus($shift) . '.json');
-    if (array_filter(json_decode($data, true)[$stop]) == NULL) return 0;
->>>>>>> parent of 301a11d... Big update and son fixes
     return array_filter(json_decode($data, true)[$stop]);
 
 }
@@ -258,23 +189,8 @@ function check_one_stop($bus, $route, $stop)
     $second_route_to_check = "Туда";
     if ($route == "Туда") $second_route_to_check = "Обратно";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $data = @file_get_contents('bus/' . $bus . '.' . $route . '.Рабочий.json');
     $data_for_check = @file_get_contents('bus/' . $bus . '.' . $second_route_to_check .  '.Рабочий.json');
-=======
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus_now() . '.json');
-    $data_for_check = file_get_contents('bus/' . $bus . '.' . $second_route_to_check . '.' . type_of_day_rus_now() . '.json');
->>>>>>> origin/master
-=======
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus_now() . '.json');
-    $data_for_check = file_get_contents('bus/' . $bus . '.' . $second_route_to_check . '.' . type_of_day_rus_now() . '.json');
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.' . type_of_day_rus_now() . '.json');
-    $data_for_check = file_get_contents('bus/' . $bus . '.' . $second_route_to_check . '.' . type_of_day_rus_now() . '.json');
->>>>>>> parent of 301a11d... Big update and son fixes
 
     $data_map = json_decode($data);
     $data_for_check_map = json_decode($data_for_check);
@@ -293,39 +209,15 @@ function check_one_stop($bus, $route, $stop)
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 function all_stops($bus)
 {
     $data_one = @file_get_contents('bus/' . $bus . '.Туда.Рабочий.json');
     $data_two = @file_get_contents('bus/' . $bus . '.Обратно.Рабочий.json');
-=======
-function all_stops($bus, $route)
-{
-    $data_one = file_get_contents('bus/' . $bus . '.Туда.Рабочий.json');
-    $data_two = file_get_contents('bus/' . $bus . '.Обратно.Рабочий.json');
->>>>>>> origin/master
-=======
-function all_stops($bus, $route)
-{
-    $data_one = file_get_contents('bus/' . $bus . '.Туда.Рабочий.json');
-    $data_two = file_get_contents('bus/' . $bus . '.Обратно.Рабочий.json');
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-function all_stops($bus, $route)
-{
-    $data_one = file_get_contents('bus/' . $bus . '.Туда.Рабочий.json');
-    $data_two = file_get_contents('bus/' . $bus . '.Обратно.Рабочий.json');
->>>>>>> parent of 301a11d... Big update and son fixes
     if ($data_one !== FALSE || $data_two !== FALSE) return array_unique(array_merge(array_keys(json_decode($data_one, true)), array_keys(json_decode($data_two, true))));
     else return array("Нет такого транспорта");
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 function all_stops_by_route($bus, $route, $day)
 {
     $data= file_get_contents('bus/' . $bus . '.' . $route . '.' . $day . '.json');
@@ -345,40 +237,13 @@ function all_stops_by_route_no_error($bus, $route, $day)
 function get_route($bus, $route)
 {
     $data = @file_get_contents('bus/' . $bus . '.' . $route . '.Рабочий.json');
-=======
-function get_route($bus, $route)
-{
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.Рабочий.json');
->>>>>>> origin/master
-=======
-function get_route($bus, $route)
-{
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.Рабочий.json');
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-function get_route($bus, $route)
-{
-    $data = file_get_contents('bus/' . $bus . '.' . $route . '.Рабочий.json');
->>>>>>> parent of 301a11d... Big update and son fixes
     if ($data === FALSE) {
         SendMessage("Нет такого транспорта", false);
         return 0;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $data = array_keys(json_decode($data, true));
 
     return current($data) . " - " . end($data) ;
-=======
-    return current(array_keys(json_decode($data, true))) . " - " . end(array_keys(json_decode($data, true)));
->>>>>>> origin/master
-=======
-    return current(array_keys(json_decode($data, true))) . " - " . end(array_keys(json_decode($data, true)));
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-    return current(array_keys(json_decode($data, true))) . " - " . end(array_keys(json_decode($data, true)));
->>>>>>> parent of 301a11d... Big update and son fixes
 }
 
 function convert_time($time)
@@ -387,67 +252,23 @@ function convert_time($time)
     return strtotime("1970-01-01 $time UTC");
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 function closest_time_new($bus, $route, $stop, $requested_time, $type, $shift)
 {
     //реализовать выдачу нескольких результатов, с переходом на нектс день
-=======
-function closest_time_new($bus, $route, $stop, $requested_time, $type)
-{
-
->>>>>>> origin/master
-=======
-function closest_time_new($bus, $route, $stop, $requested_time, $type)
-{
-
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-function closest_time_new($bus, $route, $stop, $requested_time, $type)
-{
-
->>>>>>> parent of 301a11d... Big update and son fixes
     $shift_array = array("", " завтра", " послезавтра", " через два дня", " через три дня");
     global $t;
     $offset = INF;
     $offset_return = "23:59";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $counter = $shift;
     //if (convert_time($requested_time))
-=======
-    $counter = 0;
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-    $counter = 0;
->>>>>>> parent of 301a11d... Big update and son fixes
     $time_array = array();
+    $error = 1; // тек. 16:47 автобус 16:44 - выведет 16:44, а не след
     while ($offset == INF && $counter < 7) {
 
         if ($bus == "33" && ((date('N', $t) + $counter) % 7 == 0)) $counter++; //придумать фикс для 33
-        if (!$time_array = found_by_stop_by_date($bus, $route, $stop, $counter)) return 0;
+        if ($time_array = found_by_stop_by_date($bus, $route, $stop, $counter))
         foreach ($time_array as $key) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= (convert_time($requested_time) - $error * 60)  ) {
-=======
-    $counter = 0;
-    $time_array = array();
-    while ($offset == INF && $counter < 7) {
-
-        if ($bus == "33" && ((date('N', $t) + $counter) % 7 == 0)) $counter++; //придумать фикс для 33
-        if (!$time_array = found_by_stop_by_date($bus, $route, $stop, $counter)) return 0;
-        foreach ($time_array as $key) {
-            if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= convert_time($requested_time)) {
->>>>>>> origin/master
-=======
-            if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= convert_time($requested_time)) {
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-            if (convert_time($key) - convert_time($requested_time) <= $offset && convert_time($key) >= convert_time($requested_time)) {
->>>>>>> parent of 301a11d... Big update and son fixes
                 $offset_return = $key;
                 $offset = convert_time($key) - convert_time($requested_time);
                 break;
@@ -455,19 +276,7 @@ function closest_time_new($bus, $route, $stop, $requested_time, $type)
         }
         if ($offset !== INF) break;
         $counter++;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         if ($requested_time == date("G:i", $t)) $requested_time = "00:00"; // так себе фикс
-=======
-        $requested_time = "00:00";
->>>>>>> origin/master
-=======
-        $requested_time = "00:00";
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-        $requested_time = "00:00";
->>>>>>> parent of 301a11d... Big update and son fixes
     }
 
     if ($offset == INF) return 0;
@@ -489,19 +298,7 @@ function GetLastMessages($author, $count)
         'v' => '5.62'
     );
     $get_mess = http_build_query($request_mess);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     $prev_messages = @file_get_contents('https://api.vk.com/method/messages.getHistory?' . $get_mess);
-=======
-    $prev_messages = file_get_contents('https://api.vk.com/method/messages.getHistory?' . $get_mess);
->>>>>>> origin/master
-=======
-    $prev_messages = file_get_contents('https://api.vk.com/method/messages.getHistory?' . $get_mess);
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-    $prev_messages = file_get_contents('https://api.vk.com/method/messages.getHistory?' . $get_mess);
->>>>>>> parent of 301a11d... Big update and son fixes
 
     if ($prev_messages == FALSE) return 0;
     $prev_messages = json_decode($prev_messages);
@@ -520,9 +317,6 @@ function GetLastMessages($author, $count)
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 function try_to_find_from_all($user_message){
     global $stops_low, $stops;
 
@@ -543,45 +337,18 @@ function try_to_find_from_all($user_message){
 
 }
 
-=======
->>>>>>> origin/master
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
 if (!isset($_REQUEST)) {
     return;
 }
 
 $stops = array("28 июля", "4-й Форт", "Абрикосовая", "Автобаза связи", "Автовокзал", "Автолюбителей", "Авторынок", "Автошкола", "Агротранс", "Адамковская", "Амбулатория", "АП", "АП ", "Аркадия", "Аэродромная", "Аэроклуб", "Б.Космонавтов", "Б.Шевченко", "база «Рыбторг»", "Бауманская", "Безымянная", "Беларусбанк", "Беловежская", "Белорусская", "Белтранс Ойл", "Березовая роща", "Березовка", "Бернады", "Благовещенского", "Боброва", "Богдановича", "Богданчука", "Брест Восточный", "Брест Западный", "Брестглавснаб", "Брестоблавтотранс", "Брестсельстрой", "Брестских дивизий", "БТИ", "БТК", "БЭТЗ", "ВамРад", "Варшавский рынок", "Варшавское шоссе", "Веселая", "Ветлечебница", "Ветренная", "Внештранс", "Водозабор", "Водоканал", "Волгоградская", "Волынка", "Восточная", "Восточный микрорайон", "Вторцветмет", "Вульковская", "Гаврилова", "Гагарина", "Газоаппарат", "Гаражи ОПC", "Гастелло", "Гвардейская", "Георгиевская", "Гершоны", "Гефест-Кварц", "Гоголя", "Городская", "Городская больница №1", "ГОРТОП", "Гостиница Беларусь", "Гостиница Дружба", "Гостиница Юность", "Гребной канал", "Грибоедова", "Гузнянская", "Д.П. \"Южный городок\"", "Дворец спорта Виктория", "Дворникова", "Дворцовая", "деревня Плоска", "Детский городок", "Добрая", "Дом ветеранов", "ДСУ", "Дубровка", "Екельчика", "Есенина", "Ж/Д техникум", "Жукова", "Завод", "Завод бытовой химии", "Загородная", "Загороднева", "Заречная", "Защитников Отечества", "Зеленая", "Зона отдыха", "Зубачёва", "Инволюкс", "Инко Фуд", "Интертранс", "Интурист", "К.Боярская", "Калиновая", "Карасева", "Картодром", "Карьерная", "Катин Бор", "Кедровая", "Киевская", "Кирпичная", "Кл.Северное", "Кладбище", "кладбище Плоска", "Клары Цеткин", "Клейники", "Ковалево", "Ковельская", "Ковры Бреста", "Колесника", "Колледж торговли", "Кольцевая", "Комсомольская", "Костюшко", "Красногвардейская", "Краснознаменная", "Краснознамённая", "Красный двор", "Крепость", "Криштофовича", "Крушинская", "Купальская", "л-та Рябцева", "Лейтенанта Акимочкина", "Ленина", "Ленинградская", "Летная", "Лицей", "Луцкая", "Лысая гора", "М.р-н Заречный", "М.р-н Южный", "М.р-н Южный  ", "Маг. \"Северный\"", "Магазин", "Магазин \"Продтовары\"", "Махновича", "Маш.строит. завод", "Маяковского", "Мед. Центр \"ЛОДЭ\"", "Медицинская", "Микрорайон Вулька", "Митьки", "Мицкевича", "Молодёжная", "МОПРа", "Московское шоссе", "Мостовая", "Мошенского", "Музей Ж/д техники", "Музей спасенн.ценностей", "Мухавецкая", "Мясокомбинат", "Новая", "Новосельская", "Новые Задворцы", "ОАО Брестское пиво", "Обл.больница", "Обсерватория", "Овощебаза", "Озёрная", "Озеро", "Октябрьской революции", "Орловская", "Осипенко", "Остановка", "Парк 1 МАЯ", "Парк Воинов-интернац-ов", "Партизанский проспект", "Пер. Есенина", "пер. Калиновый", "Перекресток", "Переулок", "Пионерская", "Площадь Ленина", "Пов.Ковердяки", "Пов.Козловичи", "Поворот Жемчужина", "Подгородская", "Подсобное хозяйство", "Пожарное депо", "Поликлиника", "Почта", "Прибужская", "Пригородная", "Пригородный вокзал", "Приграничная", "Промтехника", "Пронягина", "Проспект Машерова", "Проспект Республики", "Профсоюзная", "ПСО", "Пугачево", "Пункт подготовки вагонов", "Пушкинская", "Радужная", "Рембыттехника", "Республиканская", "Речицкая", "Рокоссовского", "Рынок \"ЛАГУНА\"", "Рыньковка", "Рябиновая", "С/т Жемчужина", "С/т Светлячок", "С/т Южное 1", "С/т Южное 2", "Садовая", "Сальникова", "Санта Бремор", "Санта-53", "Санта-54", "Светлая", "Сев. Кольцо", "Сикорского", "Сиреневая", "Сквер Иконникова", "Скрипникова", "Славнефть", "Смирнова", "Советская", "Советской конституции", "Сосновая", "Спортшкола", "Средняя Школа №1", "Стадион Брестский", "Стадион Локомотив", "Стадион Строитель", "Станция юннатов", "Старые Задворцы", "Стафеева", "Стимово", "СТО-2", "Строительная", "Строительный рынок", "СЭЗ Брест", "Т.Д.ИДЕАЛ", "Театр", "Тельмы", "Тенистая", "Технический университет", "Тихая", "Торговый центр Восток", "Транспортная", "Троллейбусный парк", "Трудовая", "ТЭЦ", "Тюхиничи", "ул. Вересковая", "ул.Ландшафтная", "Университет", "Училище олимпийского резерва", "Учительская", "ФОК", "Фомина", "Форт", "Хлебпром", "Цветотрон", "ЦГБ", "Центральная", "ЦМТ", "ЦУМ", "Чернинская", "Чулочный комбинат", "Шафрановая", "Школа", "Школьная", "Шоссейная", "Электросети", "Юбилейная", "Я. Купалы", "Ямно", "Ясеневая", 'Орджоникидзе', 'К.Маркса', 'Гимназия №1', 'Промстройбанк', 'Свердлова');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 $stops = array_unique(array_merge($stops, $stops_tr));
-=======
->>>>>>> origin/master
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
 $stops_low = array_map('mb_strtolower', $stops);
 
 //Получаем и декодируем уведомление
 $data = json_decode(file_get_contents('php://input'));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 switch (@$data->type) {
-=======
-switch ($data->type) {
->>>>>>> origin/master
-=======
-switch ($data->type) {
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-switch ($data->type) {
->>>>>>> parent of 301a11d... Big update and son fixes
     //Если это уведомление для подтверждения адреса сервера...
     case 'confirmation':
         //...отправляем строку для подтверждения адреса
@@ -597,19 +364,7 @@ switch ($data->type) {
 
 //и извлекаем из ответа его имя
         $user_name = $user_info->response[0]->first_name;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         $user_message = re(mb_strtolower($data->object->body));
-=======
-        $user_message = mb_strtolower($data->object->body);
->>>>>>> origin/master
-=======
-        $user_message = mb_strtolower($data->object->body);
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-        $user_message = mb_strtolower($data->object->body);
->>>>>>> parent of 301a11d... Big update and son fixes
         $response_for_message = "";
 
         $found_res = array_filter($stops_low, function ($el) use ($user_message) {
@@ -619,39 +374,18 @@ switch ($data->type) {
         $found_res_up = array();
         foreach ($found_res as $value) array_push($found_res_up, strval($stops[array_search($value, $stops_low)])); // добавляем в массив красивые
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (strpos($user_message, '_') !== false){
             echo('ok');
             break;
 
         }
 
-=======
->>>>>>> origin/master
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
->>>>>>> parent of 301a11d... Big update and son fixes
         $response_for_message = implode(", ", $found_res_up);//клеим
 
 
 //С помощью messages.send и токена сообщества отправляем ответное сообщение
         $request_params = array(
             'message' => "{$response_for_message}",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
-=======
-
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-
->>>>>>> parent of 301a11d... Big update and son fixes
             'user_id' => $user_id,
             'access_token' => $token,
             'v' => '5.62'
@@ -667,119 +401,29 @@ switch ($data->type) {
             $request_params['message'] = 'Мемыыыы, наканецтааааа';
         }
         if ($user_message == 'привет') $request_params['message'] = "Привет, {$user_name}!";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (strpos($user_message, 'спасибо') !== false || $user_message == 'спс' || $user_message == 'красава') $request_params['message'] = "Пожалуйста, {$user_name} 😌";
         if (strpos($user_message, 'как дела') !== false || $user_message == 'как сам?') $request_params['message'] = "Все отлично, а ты как, {$user_name}?";
-=======
-        if ($user_message == 'спасибо' || $user_message == 'спс') $request_params['message'] = "Пожалуйста, {$user_name} 😌";
-        if ($user_message == 'как дела' || $user_message == 'как сам' || $user_message == 'как дела?' || $user_message == 'как сам?') $request_params['message'] = "Все отлично, а ты как, {$user_name}?";
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-        if ($user_message == 'спасибо' || $user_message == 'спс') $request_params['message'] = "Пожалуйста, {$user_name} 😌";
-        if ($user_message == 'как дела' || $user_message == 'как сам' || $user_message == 'как дела?' || $user_message == 'как сам?') $request_params['message'] = "Все отлично, а ты как, {$user_name}?";
->>>>>>> parent of 301a11d... Big update and son fixes
         if ($user_message == 'нормально' || $user_message == 'хорошо' || $user_message == 'збс' || $user_message == 'отлично' || $user_message == 'норм') $request_params['message'] = "Круто!";
         if ($user_message == 'time') $request_params['message'] = type_of_day_rus_now();
-        if ($user_message == 'помощь') $request_params['message'] = "Что я умею: \n - Поиск с текущим временем по BUS_NUM STOP_NAME \n - Поиск всех остановок ОСТАНОВКИ BUS_NUM \n - Расписание на остановке BUS_NUM STOP_NAME РАСПИСАНИЕ \n- Остановки необязательно дописывать, если части хватает, то выведется ответ \n Примеры: \n остановки 17\n 6 цум\n 5 стадион бре расписание\n Регистр не важен";
+        if ($user_message == 'помощь' || $user_message == 'что ты умеешь') $request_params['message'] = "Что я умею: \n - Поиск с текущим временем: АВТОБУС ОСТАНОВКА \n - Поиск всех остановок: ОСТАНОВКИ АВТОБУС \n - Расписание на остановке: АВТОБУС ОСТАНОВКА РАСПИСАНИЕ \n- Остановки необязательно дописывать, если части хватает, то выведется ответ \n Примеры: \n остановки 17\n 1Т цум (для троллейбуса допиши Т)\n 5 стадион бре расписание\n 17 цум 21:00\n Регистр не важен";
         if ($user_message == 'ты пидор') $request_params['message'] = "Только пидора могли назвать таким именем -  {$user_name}. ";
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (strpos($user_message, 'кто тебя ') !== false) $request_params['message'] = "Authors: \nvk.com/googlebox - code, idea\nvk.com/evgen_vagabund  - database, debug ";
-=======
-        if ($user_message == 'спасибо' || $user_message == 'спс') $request_params['message'] = "Пожалуйста, {$user_name} 😌";
-        if ($user_message == 'как дела' || $user_message == 'как сам' || $user_message == 'как дела?' || $user_message == 'как сам?') $request_params['message'] = "Все отлично, а ты как, {$user_name}?";
-        if ($user_message == 'нормально' || $user_message == 'хорошо' || $user_message == 'збс' || $user_message == 'отлично' || $user_message == 'норм') $request_params['message'] = "Круто!";
-        if ($user_message == 'time') $request_params['message'] = type_of_day_rus_now();
-        if ($user_message == 'помощь') $request_params['message'] = "Что я умею: \n - Поиск с текущим временем по BUS_NUM STOP_NAME \n - Поиск всех остановок ОСТАНОВКИ BUS_NUM \n - Расписание на остановке BUS_NUM STOP_NAME РАСПИСАНИЕ \n- Остановки необязательно дописывать, если части хватает, то выведется ответ \n Примеры: \n остановки 17\n 6 цум\n 5 стадион бре расписание\n Регистр не важен";
-        if ($user_message == 'ты пидор') $request_params['message'] = "Только пидора могли назвать таким именем -  {$user_name}. ";
-        if ($user_message == 'кто тебя сделал') $request_params['message'] = "Authors: \nvk.com/googlebox - code, idea\nvk.com/evgen_vagabund  - database, debug ";
->>>>>>> origin/master
-=======
-        if ($user_message == 'кто тебя сделал') $request_params['message'] = "Authors: \nvk.com/googlebox - code, idea\nvk.com/evgen_vagabund  - database, debug ";
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-        if ($user_message == 'кто тебя сделал') $request_params['message'] = "Authors: \nvk.com/googlebox - code, idea\nvk.com/evgen_vagabund  - database, debug ";
->>>>>>> parent of 301a11d... Big update and son fixes
         //if ($user_message == 'да' && substr_count($messages_history_bot[0], ',') != 0) $request_params['message'] = "Что значит да?";
         if ($data->object->attachments[0]->type == "sticker") {
             $request_params['message'] = "Классный стикер, жаль я не умею их кидать :(";
             //$request_params['sticker_id'] = "12";
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(RemoveKeyWord("остановки", $user_message))));
         if (strpos($user_message, 'транспорт') !== false){
 
             $request_params['message'] = answer_for_bus_stop(try_to_find_from_all(RemoveKeyWord("транспорт", $user_message)),"Туда", type_of_day_rus_now());
         }
-=======
-        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(explode(' ', $user_message, 2)[1]), "1"));
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(explode(' ', $user_message, 2)[1]), "1"));
->>>>>>> parent of 301a11d... Big update and son fixes
         if ((count($current = explode(' ', $user_message)) >= 2) && $request_params['message'] == "") {
-            if (get_route(mb_strtoupper($current[0]), "Туда")) {
-                //дописать проверку пар, а еще разобраться с маршрутами, что ездят только в субботу, кавычки
-                $normal_stop = "";
-                $rasp_checker = "";
-                $current_bus = mb_strtoupper($current[0]);
-                if (end($current) == "расписание")
-                    $rasp_checker = array_pop($current);
-                if ($normal_stop = try_to_find_stop(mb_strtolower(implode(" ", array_slice($current, 1))), $current_bus)) $normal_stop = GetUpperStopName($current_bus, $normal_stop);
-                if (check_one_stop($current_bus, "Туда", $normal_stop) && $normal_stop != "") {
-                    $request_params['message'] = "";
-                    $rasp = 0;
-                    $current_date = date("G:i", $t);
 
-                    if ($rasp_checker == "расписание") $rasp = 1; //проверка на одно направление, чиститм чтобы мусора не было, ибо добавляем в строку, а не присваеваем
-                    if ($time = closest_time_new($current_bus, "Туда", $normal_stop, $current_date, $rasp))
-                        $request_params['message'] = $current_bus . ". " . get_route($current_bus, "Туда") . " на остановке " . $normal_stop . " будет в " . $time . "\n";
-                    if ($time = closest_time_new($current_bus, "Обратно", $normal_stop, $current_date, $rasp))
-                        $request_params['message'] .= $current_bus . ". " . get_route($current_bus, "Обратно") . " на остановке " . $normal_stop . " будет в " . $time;
-                }
-            }
+            $request_params['message'] = BuStopResp(SortRightWay($current));
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         if ($request_params['message'] == "" ) $request_params['message'] = "Если нужна помощь, напиши: помощь";
-=======
-        if (strpos($user_message, 'остановки') !== false) $request_params['message'] = implode(", ", all_stops(mb_strtoupper(explode(' ', $user_message, 2)[1]), "1"));
-        if ((count($current = explode(' ', $user_message)) >= 2) && $request_params['message'] == "") {
-            if (get_route(mb_strtoupper($current[0]), "Туда")) {
-                //дописать проверку пар, а еще разобраться с маршрутами, что ездят только в субботу, кавычки
-                $normal_stop = "";
-                $rasp_checker = "";
-                $current_bus = mb_strtoupper($current[0]);
-                if (end($current) == "расписание")
-                    $rasp_checker = array_pop($current);
-                if ($normal_stop = try_to_find_stop(mb_strtolower(implode(" ", array_slice($current, 1))), $current_bus)) $normal_stop = GetUpperStopName($current_bus, $normal_stop);
-                if (check_one_stop($current_bus, "Туда", $normal_stop) && $normal_stop != "") {
-                    $request_params['message'] = "";
-                    $rasp = 0;
-                    $current_date = date("G:i", $t);
-
-                    if ($rasp_checker == "расписание") $rasp = 1; //проверка на одно направление, чиститм чтобы мусора не было, ибо добавляем в строку, а не присваеваем
-                    if ($time = closest_time_new($current_bus, "Туда", $normal_stop, $current_date, $rasp))
-                        $request_params['message'] = $current_bus . ". " . get_route($current_bus, "Туда") . " на остановке " . $normal_stop . " будет в " . $time . "\n";
-                    if ($time = closest_time_new($current_bus, "Обратно", $normal_stop, $current_date, $rasp))
-                        $request_params['message'] .= $current_bus . ". " . get_route($current_bus, "Обратно") . " на остановке " . $normal_stop . " будет в " . $time;
-                }
-            }
-        }
-
-        if ($request_params['message'] == "") $request_params['message'] = "Если нужна помощь напиши: помощь";
->>>>>>> origin/master
-=======
-        if ($request_params['message'] == "") $request_params['message'] = "Если нужна помощь напиши: помощь";
->>>>>>> parent of 301a11d... Big update and son fixes
-=======
-        if ($request_params['message'] == "") $request_params['message'] = "Если нужна помощь напиши: помощь";
->>>>>>> parent of 301a11d... Big update and son fixes
 
         file_get_contents('https://api.vk.com/method/messages.send?' . http_build_query($request_params));
 
