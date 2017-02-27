@@ -446,7 +446,8 @@ img {} .social-image {
     background: #507299;
 }
 .social.twett {
-    background: #339bc2;
+    background: #ffffff;
+    color: black;
 }
 .social.yt {
     background: #dc473a;
@@ -585,7 +586,7 @@ textarea:invalid {
     background: no-repeat url(../img/social.png)-180px 4px;
 }
 .img-soc.twit {
-    background: no-repeat url(../img/social.png)-60px 4px;
+    background: no-repeat url(../img/social.png)-63px 4px;
 }
 .img-soc.yt {
     background: no-repeat url(../img/social.png)-122px 4px;
