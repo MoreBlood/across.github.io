@@ -113,7 +113,7 @@ $(document).ready(function () {
         //console.log(form_data);
         if (preventSpam == 0) $.ajax({
             type: "POST",
-            url: "mail.php",
+            url: "http://mbdes.esy.es/mail.php",
             data: form_data,
             success: function(){
               var form_height = $("#form").outerHeight(true) + $(".btn").outerHeight(true);
