@@ -289,3 +289,11 @@ body {
     overflow: hidden;
     height: 100vh;
 }
+@keyframes hue420 {
+    0%   { filter : hue-rotate(0deg) ; }
+    100% { filter : hue-rotate(360deg) ; }
+}
+
+#bird{
+    animation: hue420 2s infinite;
+}

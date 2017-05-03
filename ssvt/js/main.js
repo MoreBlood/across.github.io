@@ -166,7 +166,7 @@
     });
 
 
-    var particles = d3.range(2000).map(function(i) {
+    var particles = d3.range(canvasSky.width).map(function(i) {
         return [Math.round( canvasSky.width *Math.random()), Math.round(canvasSky.height*Math.random())];
     });
 
