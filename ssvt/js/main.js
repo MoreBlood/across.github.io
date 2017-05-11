@@ -1,63 +1,22 @@
-// Copyright 2013 William Malone (www.williammalone.com)
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//   http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-(function() {
-    // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-    // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-    // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
-    // MIT license
-
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-            || window[vendors[x]+'CancelRequestAnimationFrame'];
-    }
-
-    if (!window.requestAnimationFrame)
-        window.requestAnimationFrame = function(callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-                timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
-
-    if (!window.cancelAnimationFrame)
-        window.cancelAnimationFrame = function(id) {
-            clearTimeout(id);
-        };
-}());
-
 (function () {
 
     var coin,
         coinImage,
         canvasBird,
-        canvasSky;
+        canvasSky,
+    check = false;
 
-    function gameLoop () {
+    function gameLoop() {
 
         window.requestAnimationFrame(gameLoop);
 
         coin.update();
         coin.render();
+        step();
+
     }
 
-    function sprite (options) {
+    function sprite(options) {
 
         var that = {},
             frameIndex = 0,
@@ -69,7 +28,7 @@
             columns = options.columns,
             currentFrame = 1,
             posX = canvasBird.width,
-            posY = canvasBird.height;
+            posY = 100;
 
         that.context = options.context;
         that.width = options.width;
@@ -85,8 +44,6 @@
                 tickCount = 0;
 
 
-
-
                 // If the current frame index is in range
                 if (currentFrame < numberOfFrames - 1) {
                     // Go to the next frame
@@ -100,11 +57,10 @@
                     currentFrame = 0;
                 }
 
-                if (currentFrame % columns  === 0 && currentFrame != 0){
+                if (currentFrame % columns === 0 && currentFrame != 0) {
                     frameIndexVertical += 1;
                     frameIndex = 0;
                 }
-
 
 
             }
@@ -114,20 +70,34 @@
 
             // Clear the canvas
             that.context.clearRect(0, 0, canvasBird.width, canvasBird.height);
-            posX -= canvasBird.width /100;
-            posY -= canvasBird.height / 100;
+
+            if (!check) {
+                posX += canvasBird.width / 100;
+            }if (check) {
+                posX -= canvasBird.width / 100;
+            }
 
 
-            if (posX < - that.width / columns || posY < - that.height/rows)
-            {
-                posX = canvasBird.width;
-                posY = canvasBird.height;
+            if (posX > canvasBird.width){
+                    posX = canvasBird.width - 100;
+                check = true;
+                that.image = new Image();
+                that.image.src = "img/robin.png";
+            }if (posX < 0){
+                posX = 0;
+                check = false;
+                that.image = new Image();
+                that.image.src = "img/robin_mir.png";
+                //that.context.scale(1,-1);
+
+
             }
             // Draw the animation
+
             that.context.drawImage(
                 that.image,
                 frameIndex * that.width / columns,
-                frameIndexVertical * that.height/rows,
+                frameIndexVertical * that.height / rows,
                 that.width / columns,
                 that.height / rows,
                 posX,
@@ -166,40 +136,52 @@
     });
 
 
-    var particles = d3.range(canvasSky.width).map(function(i) {
-        return [Math.round( canvasSky.width *Math.random()), Math.round(canvasSky.height*Math.random())];
+    var particles = d3.range(canvasSky.width / 10).map(function (i) {
+        return [Math.round(canvasSky.width * Math.random()), Math.round(canvasSky.height * Math.random())];
     });
+    var pos = 0;
+    var pos2 = 0;
 
-    d3.timer(step);
 
     function step() {
-        contextSky.clearRect(0,0,canvasSky.width,canvasSky.height);
-        particles.forEach(function(p) {
+        contextSky.clearRect(0, 0, canvasSky.width, canvasSky.height);
+        particles.forEach(function (p) {
 
-            p[0] += Math.round(2*Math.random()-1);
-            p[1] += Math.round(2*Math.random()-1);
-            if (p[0] < 0) p[0] = canvasSky.width;
-            if (p[0] > canvasSky.width) p[0] = 0;
-            if (p[1] < 0) p[1] = canvasSky.height;
-            if (p[1] > canvasSky.height) p[1] = 0;
+            p[0] += Math.round(2 * Math.random() - 1);
+            p[1] += Math.round(2 * Math.random() - 1);
             drawPoint(p);
         });
+        pos += canvasBird.width / 150;
+        pos2 += canvasBird.height / 150;
+        //contextSky.blur(5);
+        contextSky.fillRect(pos, pos2, 5, 5    );
+        if (pos2 > canvasBird.height){
+            pos = 0;
+            pos2 =0;
+
+        }
+        $('#bird').click(function (e) { //Default mouse Position
+            pos = e.pageX;
+            pos2 =e.pageY;
+        });
+
+
     };
 
     function drawPoint(p) {
 
-        var randomOpacityOne = Math.floor((Math.random()*9)+1);
-        var randomOpacityTwo = Math.floor((Math.random()*9)+1);
-        var randomHue = Math.floor((Math.random()*360)+1);
-        var randomSize = Math.floor((Math.random()*3)+1);
-        contextSky.fillStyle = "hsla("+randomHue+", 30%, 80%, ."+randomOpacityOne+randomOpacityTwo+")";
+        var randomOpacityOne = Math.floor((Math.random() * 9) + 1);
+        var randomOpacityTwo = Math.floor((Math.random() * 9) + 1);
+        var randomHue = Math.floor((Math.random() * 360) + 1);
+        var randomSize = Math.floor((Math.random() * 3) + 1);
+        contextSky.fillStyle = "hsla(" + randomHue + ", 30%, 80%, ." + randomOpacityOne + randomOpacityTwo + ")";
         contextSky.shadowColor = "white";
-        contextSky.fillRect(p[0],p[1],randomSize,randomSize);
+        contextSky.fillRect(p[0], p[1], randomSize, randomSize);
     };
 
     // Load sprite sheet
     coinImage.addEventListener("load", gameLoop);
     coinImage.src = "img/robin.png";
 
-} ());
+}());
 

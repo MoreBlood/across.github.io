@@ -295,5 +295,6 @@ body {
 }
 
 #bird{
-    animation: hue420 2s infinite;
+    /* animation: hue420 2s infinite; */
+    /* opacity: 0.4; */
 }
