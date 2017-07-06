@@ -7,8 +7,6 @@ $('.sub-title').html(capitalizeFirstLetter(getPartOfTheText(text, 20, 55)));
 
 var query = "(-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
-
-
 for (var i = 0; i < imageCount;) {
     i++;
 

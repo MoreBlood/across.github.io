@@ -358,7 +358,7 @@ textarea {
 .gallery {
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 12rem;
+    margin-bottom: 3rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
@@ -402,12 +402,7 @@ img.image-show-off {
 .footer {
     background: #ffffff;
     height: 6rem;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    box-sizing: border-box;
-    z-index: 9;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -417,7 +412,8 @@ img.image-show-off {
     color: #9e9e9e;
 }
 .footer-about.copyright {
-    margin: 1.5rem;
+    margin: 0 1.5rem 0 1.5rem;
+    max-width: 290px;
 }
 
 @media (max-width: 768px)
