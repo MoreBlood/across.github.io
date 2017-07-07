@@ -4,11 +4,10 @@
 /*! Start Type Nugget Styles */
 
 body {
-
-	font-family: 'Open Sans', 'HelveticaNeue-CondensedBold', Arial, sans-serif;
-	color: #333;
-	background-color: #f9f9f9;
-	line-height: 1.735;
+font-family: 'Open Sans', 'Helvetica', Arial, sans-serif;
+color: #333;
+background-color: #f9f9f9;
+line-height: 1.735;
 }
 
 h1,h2,h3,h4,h5,h6 {

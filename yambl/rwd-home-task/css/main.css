@@ -295,11 +295,11 @@ textarea {
 }
 
 .image-wrapper.first {
-    flex-basis: 550px;
+    flex-basis: 550px!important;
     flex-grow: 1;
 }
 .image-wrapper.fourth {
-    flex-basis: 460px;
+    flex-basis: 460px!important;
     /* flex-grow: 0; */
 }
 
@@ -313,12 +313,12 @@ textarea {
     border: 5px solid white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12);
     margin: 0.2rem;
-    flex-basis: 300px;
     cursor: pointer;
     cursor: -webkit-zoom-in;
     border-radius: 2px;
     flex-shrink: 1;
-    flex-grow: 30;
+    flex-grow: 40;
+    transition: box-shadow,flex-basis 0.1s linear;
 }
 
 .image-description {
@@ -464,3 +464,5 @@ img.image-show-off {
 .footer-about.yandex.copyright {
     text-align: right;
 }
+
+.image-wrapper:hover {/* border-color: #e2e2e2; */box-shadow: 0 0px 7px 1px rgb(255, 188, 0);}

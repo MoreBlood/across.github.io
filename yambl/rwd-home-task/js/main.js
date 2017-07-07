@@ -10,12 +10,19 @@ var query = "(-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (
 for (var i = 0; i < imageCount;) {
     i++;
 
-    var url = "'.\/img\/" + i + ".jpg'";
+    var prefix = "";
+    // превью для ретины без префикса
+    if (!matchMedia(query).matches) {
+         prefix = '_prw';
+    }
+
+    var url = "'.\/img\/" + i + prefix + ".jpg'";
     var _class = "";
     var textPart = capitalizeFirstLetter(getPartOfTheText(text, (i - 1) * 15, 15 * i));
 
     if (i % 4 === 0) _class = "fourth";
     if (i % 7 === 1) _class = "first";
+
 
     //language=HTML
     $('.gallery').append(
@@ -28,17 +35,25 @@ for (var i = 0; i < imageCount;) {
         '<div class="image-description blur" style="background-image: url(' + url + ')"></div>' +
         '</div></div></div>'
     );
+
+
 }
+
+$('.image-container').each(function() {
+    setContainerBasis($(this));
+});
 
 $('.image-wrapper').on('click', function () {
     var prefix = "";
 
+    //превью для ретины с префиксом
     if (matchMedia(query).matches) {
-       prefix = "_high";
+        prefix = "_high";
     }
 
     var url = ".\/img\/" + $(this).attr('id') + prefix + ".jpg";
-    $('.show-off').css({'background-image': 'url(' + url + ')',
+    $('.show-off').css({
+        'background-image': 'url(' + url + ')',
         'visibility': 'visible'
     });
     $('.content').css({'filter': 'blur(10px)'});
@@ -57,4 +72,15 @@ function capitalizeFirstLetter(string) {
 
 function getPartOfTheText(text, start, stop) {
     return text.split(/\s+/).slice(start, stop).join(" ");
+}
+
+function setContainerBasis(image) {
+    var actualImage = new Image();
+    actualImage.src = image.css('background-image').replace(/"/g, "").replace(/url\(|\)$/ig, "");
+
+    actualImage.onload = function () {
+        image.parent().css({
+            'flex-basis': (image.height()/this.height)*this.width + 'px'
+        });
+    };
 }
