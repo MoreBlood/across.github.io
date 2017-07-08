@@ -318,7 +318,8 @@ textarea {
     border-radius: 2px;
     flex-shrink: 1;
     flex-grow: 40;
-    transition: box-shadow,flex-basis 0.1s linear;
+    transition: all 0.5s linear;
+    opacity: 0;
 }
 
 .image-description {
@@ -392,6 +393,7 @@ div::first-letter {
     background-repeat: no-repeat;
     background-position: center;
     visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
 }
 
 img.image-show-off {
@@ -465,4 +467,4 @@ img.image-show-off {
     text-align: right;
 }
 
-.image-wrapper:hover {/* border-color: #e2e2e2; */box-shadow: 0 0px 7px 1px rgb(255, 188, 0);}
+.image-wrapper:hover {/* border-color: #e2e2e2; */box-shadow: 0 0px 7px 1px rgb(255, 188, 0);}0);}

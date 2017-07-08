@@ -39,6 +39,8 @@ for (var i = 0; i < imageCount;) {
 
 }
 
+var counter = 0;
+
 $('.image-container').each(function() {
     setContainerBasis($(this));
 });
@@ -74,7 +76,9 @@ function getPartOfTheText(text, start, stop) {
     return text.split(/\s+/).slice(start, stop).join(" ");
 }
 
+
 function setContainerBasis(image) {
+    var time = 50;
     var actualImage = new Image();
     actualImage.src = image.css('background-image').replace(/"/g, "").replace(/url\(|\)$/ig, "");
 
@@ -82,5 +86,11 @@ function setContainerBasis(image) {
         image.parent().css({
             'flex-basis': (image.height()/this.height)*this.width + 'px'
         });
+            setTimeout(fadeIn, time + counter*time, image);
+        counter++;
     };
 }
+
+var fadeIn = function (elem) {
+    elem.parent().css({'opacity': '1'})
+};
