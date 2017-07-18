@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="build/index.js"></script>
+    <script>
+        ym.modules.require('shri2017.ImageViewer', function (ImageViewer) {
+            var imageViewer = new ImageViewer({
+                url: 'image.jpg',
+                elem: document.getElementById('holder'),
+                size: {
+                    width: 700,
+                    height: 700
+                }
+            });
+        });
+    </script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #holder {
+            margin: 0px auto;
+            width: 700px;
+        }
+
+        canvas {
+            image-rendering: optimizeSpeed;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -o-crisp-edges;
+            image-rendering: crisp-edges;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+
+        pre {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+<div id=holder>
+
+</div>
+
+<div class="info-holder" style="margin: 0 auto; width: 700px">
+        <pre style="float: left;">
+            <span id="type">Using:</span>
+            <span id="gesture">Gesture:</span>
+            <span id="touches">Touches:</span>
+        </pre>
+    <pre style="float: left;">
+            Browser supports:
+            <input type="checkbox" disabled="disabled" id="mouse"> <label for="mouse">Mouse Events</label>
+            <input type="checkbox" disabled="disabled" id="pointer"> <label for="pointer">Pointer Events</label>
+            <input type="checkbox" disabled="disabled" id="touch">  <label for="touch">Touch Events</label>
+        </pre>
+</div>
+
+</body>
+<script>
+    var myElement = document.getElementById("holder");
+    var cbMouse = document.getElementById("mouse");
+    var cbPointer = document.getElementById("pointer");
+    var cbTouch = document.getElementById("touch");
+
+    if (window.PointerEvent || !window.Touch) {
+        myElement.style.touchAction = "none";
+        console.warn('disabling touch events...');
+    }
+    if (window.PointerEvent) {
+        console.warn('using pointer events...');
+        cbPointer.checked = 'checked';
+    }
+    if (!window.PointerEvent && !window.Touch) {
+        console.warn('using mouse events...');
+    }
+    if (window.Touch) {
+        if (!window.PointerEvent) console.warn('using touch events...');
+        cbTouch.checked = 'checked';
+    }
+    if (window.MouseEvent) {
+        cbMouse.checked = 'checked';
+    }
+    myElement.addEventListener('gesturestart', function (event) {
+        console.warn('preventing safari pinch to zoom...');
+        event.preventDefault();
+    });
+    myElement.addEventListener('cmd_fullZoomEnlarge', function (event) {
+        console.warn('preventing firefox pinch to zoom...');
+        event.preventDefault();
+    });
+
+</script>
+
+</html>

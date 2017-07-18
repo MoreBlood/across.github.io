@@ -316,8 +316,8 @@ textarea {
     cursor: pointer;
     cursor: -webkit-zoom-in;
     border-radius: 2px;
-    flex-shrink: 1;
-    flex-grow: 40;
+    flex-shrink: 0;
+    flex-grow: 43;
     transition: all 0.5s linear;
     opacity: 0;
 }

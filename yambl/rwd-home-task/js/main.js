@@ -22,8 +22,6 @@ for (var i = 0; i < imageCount;) {
 
     if (i % 4 === 0) _class = "fourth";
     if (i % 7 === 1) _class = "first";
-
-
     //language=HTML
     $('.gallery').append(
         '<div class="image-wrapper ' + _class + '" id=' + i + '>' +
@@ -35,8 +33,6 @@ for (var i = 0; i < imageCount;) {
         '<div class="image-description blur" style="background-image: url(' + url + ')"></div>' +
         '</div></div></div>'
     );
-
-
 }
 
 var counter = 0;
@@ -76,7 +72,6 @@ function getPartOfTheText(text, start, stop) {
     return text.split(/\s+/).slice(start, stop).join(" ");
 }
 
-
 function setContainerBasis(image) {
     var time = 50;
     var actualImage = new Image();
@@ -84,9 +79,9 @@ function setContainerBasis(image) {
 
     actualImage.onload = function () {
         image.parent().css({
-            'flex-basis': (image.height()/this.height)*this.width + 'px'
+            'flex-basis': (image.height() / this.height) * this.width + 'px'
         });
-            setTimeout(fadeIn, time + counter*time, image);
+            setTimeout(fadeIn, time + counter * time, image);
         counter++;
     };
 }
