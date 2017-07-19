@@ -2855,7 +2855,7 @@ ym.modules.define('shri2017.imageViewer.EventManager', [
         _setupListeners: function () {
 
             this._mouseListener = this._mouseEventHandler.bind(this);
-            //this._addEventListeners('mousedown wheel', this._elem, this._mouseListener);
+            this._addEventListeners('mousedown wheel', this._elem, this._mouseListener);
             this._touchListener = this._touchEventHandler.bind(this);
             this._addEventListeners('touchstart touchmove touchend touchcancel', this._elem, this._touchListener);
             this._pointerListener = this._pointerEventHandler.bind(this);
@@ -3143,7 +3143,7 @@ ym.modules.define('shri2017.imageViewer.GestureController', [
                 return;
             }
             //one touch
-            if (this._lastEventTypes.match(/start.+end.+start.+move/) || this._oneTouch) {
+            if ((this._lastEventTypes.match(/start.+end.+start.+move/) || this._oneTouch) && !event.inputType.match(/mouse/)) {
                 this._lastEventTypes = '';
                 this._oneTouch = true;
 
@@ -3200,8 +3200,7 @@ ym.modules.define('shri2017.imageViewer.GestureController', [
             );
         },
         _processOneTouch: function (event, delta) {
-
-            if (event.inputType.match(/mouse/)) return;
+            
             this._GestureHTML.textContent= "Gesture: OneTouch Zoom";
             this._scale(
                 this._initEvent.targetPoint,
