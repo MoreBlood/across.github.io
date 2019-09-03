@@ -63,7 +63,7 @@ function SaveCookies(lang) { // заносим cookie в память (пока 
 $(document).ready(function () {
 	var kawaii_opacity = 0;
 	$('.story').addClass('slideInUp', 'visible');
-	$('.footer-text').text('© ' + new Date().getFullYear() + 'moreblood');
+	$('.footer-text').text('© ' + new Date().getFullYear() + ' moreblood');
 	$('.like').click(function(){		
 		$(this).addClass('liked').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
       $(this).removeClass('liked');
